@@ -3,9 +3,9 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type { Config } from "jest";
+import path from "path";
 
-const config: Config = {
+export default {
     // All imported modules in your tests should be mocked automatically
     // automock: false,
 
@@ -19,10 +19,16 @@ const config: Config = {
     clearMocks: true,
     testEnvironment: "jsdom",
     coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
+    moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "node"],
     moduleDirectories: ["node_modules"],
-    moduleFileExtensions: ["js", "mjs", "cjs", "jsx", "ts", "tsx", "json", "node"],
-    roots: ["../../"],
-    testMatch: ["**/?(*.)+(spec|test).[jt]s?(x)"],
+    modulePaths: ["<rootDir>src"],
+    testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
+    rootDir: "../../",
+    setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
+    moduleNameMapper: {
+        "\\.s?css$": "identity-obj-proxy",
+        "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
+    },
     // transform: {
     //     "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest",
     // },
@@ -181,5 +187,3 @@ const config: Config = {
     // Whether to use watchman for file crawling
     // watchman: true,
 };
-
-export default config;

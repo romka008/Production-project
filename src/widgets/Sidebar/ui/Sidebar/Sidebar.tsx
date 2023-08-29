@@ -12,13 +12,18 @@ interface ISidebarProps {
 export const Sidebar = ({ className }: ISidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
 
-    const onToogle = () => {
+    const onToggle = () => {
         setCollapsed(prev => !prev);
     };
 
     return (
-        <div className={classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [className])}>
-            <button onClick={onToogle}>toogle</button>
+        <div
+            className={classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [className])}
+            data-testid="sidebar"
+        >
+            <button data-testid="sidebar-toggle" onClick={onToggle}>
+                toogle
+            </button>
             <div className={styles.swithers}>
                 <ThemeSwitcher />
                 {!collapsed && <LangSwitcher />}
