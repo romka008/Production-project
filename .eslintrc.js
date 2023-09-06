@@ -10,6 +10,7 @@ module.exports = {
         "plugin:react-hooks/recommended",
         "plugin:react/jsx-runtime",
         "prettier",
+        "plugin:storybook/recommended",
     ],
     overrides: [
         {
@@ -36,7 +37,7 @@ module.exports = {
         linebreakStyle: 0,
         quotes: ["error", "double", { allowTemplateLiterals: true }],
         semi: ["error", "always"],
-        "react/jsx-sort-props": ["warn", { ignoreCase: true }],
+        "react/jsx-sort-props": ["warn", { ignoreCase: true, noSortAlphabetically: true }],
         "@typescript-eslint/no-unused-vars": 0,
     },
     settings: {
