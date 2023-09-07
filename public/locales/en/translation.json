@@ -1,8 +1,11 @@
 {
     "Тестовый пример": "Test example",
     "Перевод": "Translate",
-    "Главная": "MainPage",
+    "Главная страница": "Main Page",
     "Язык": "English",
     "Страница не найдена": "Not found page",
-    "Произошла непредвиденная ошибка": "An unexpected error has occurred"
+    "Произошла непредвиденная ошибка": "An unexpected error has occurred",
+    "Короткий язык": "En",
+    "Главная": "Main",
+    "О сайте": "About us"
 }
