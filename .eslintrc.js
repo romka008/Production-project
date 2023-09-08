@@ -31,7 +31,7 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: ["@typescript-eslint", "react"],
+    plugins: ["@typescript-eslint", "react", "react-hooks"],
     rules: {
         indent: [2, 4],
         linebreakStyle: 0,
@@ -39,6 +39,8 @@ module.exports = {
         semi: ["error", "always"],
         "react/jsx-sort-props": ["warn", { ignoreCase: true, noSortAlphabetically: true }],
         "@typescript-eslint/no-unused-vars": 0,
+        "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+        "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
     },
     settings: {
         react: {
