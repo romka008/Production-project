@@ -2,6 +2,7 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
+        jest: true,
     },
     extends: [
         "eslint:recommended",
@@ -41,6 +42,7 @@ module.exports = {
         "@typescript-eslint/no-unused-vars": 0,
         "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
         "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
+        "@typescript-eslint/no-var-requires": 0,
     },
     settings: {
         react: {
