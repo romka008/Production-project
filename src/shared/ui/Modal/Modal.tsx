@@ -1,9 +1,8 @@
-import { classNames } from "shared/lib/classNames/classNames";
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import { classNames } from "shared/lib/classNames/classNames";
+import { Portal } from "../Portal/Portal";
 
 import styles from "./Modal.module.scss";
-import { Portal } from "../Portal/Portal";
-import { useTheme } from "app/providers/ThemeProvider";
 
 interface IModalProps {
     className?: string;
@@ -26,8 +25,6 @@ export const Modal = ({ className, isOpen, onClose, children }: IModalProps) => 
             }, ANIMATION_DELAY);
         }
     }, [onClose]);
-
-    const { theme } = useTheme();
 
     const onKeyDown = useCallback(
         (e: globalThis.KeyboardEvent) => {
@@ -58,7 +55,7 @@ export const Modal = ({ className, isOpen, onClose, children }: IModalProps) => 
                 className={classNames(
                     styles.modal,
                     { [styles.opened]: isOpen, [styles.isClosing]: isClosing },
-                    [className, theme, "app_modal"]
+                    [className]
                 )}
             >
                 <div className={styles.overlay} onClick={closeHandler}>
