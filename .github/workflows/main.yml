@@ -30,3 +30,6 @@ jobs:
             - name: linting testing
               run: npm run unit
               if: always()
+            - name: build storybook
+              run: npm run storybook:build
+              if: always()
