@@ -8,6 +8,7 @@ interface IUseThemeResult {
 
 export const useTheme = (): IUseThemeResult => {
     const { theme, setTheme } = useContext(ThemeContext);
+    document.body.className = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) || Theme.LIGHT;
 
     const toogleTheme = () => {
         const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;

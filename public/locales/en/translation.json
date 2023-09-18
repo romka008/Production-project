@@ -1,12 +1,16 @@
 {
-    "Тестовый пример": "Test example",
-    "Перевод": "Translate",
-    "Главная страница": "Main Page",
-    "Язык": "English",
-    "Страница не найдена": "Not found page",
-    "Произошла непредвиденная ошибка": "An unexpected error has occurred",
-    "Короткий язык": "En",
-    "Главная": "Main",
-    "О сайте": "About us",
-    "Войти": "Login"
+  "Тестовый пример": "Test example",
+  "Перевод": "Translate",
+  "Главная страница": "Main Page",
+  "Язык": "English",
+  "Страница не найдена": "Not found page",
+  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
+  "Короткий язык": "En",
+  "Главная": "Main",
+  "О сайте": "About us",
+  "Войти": "Login",
+  "Пароль": "password",
+  "Имя": "username",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password"
 }
