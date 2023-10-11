@@ -13,5 +13,7 @@
   "Пароль": "password",
   "Имя": "username",
   "Форма авторизации": "Authorization form",
-  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password"
+  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password",
+  "Профиль": "Profile",
+  "Profile Page": "Profile Page"
 }

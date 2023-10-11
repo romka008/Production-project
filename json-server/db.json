@@ -21,6 +21,13 @@
         }
     ],
     "profile": {
-        "name": "typicode"
+        "first": "Роман",
+        "lastname": "Андреевич",
+        "age": 15,
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Moscow",
+        "username": "admin",
+        "avatar": "https://services.aslife.ru/gitlab/uploads/-/system/user/avatar/8/avatar.png?width=400"
     }
 }

@@ -1,11 +1,13 @@
 import { RouteProps } from "react-router-dom";
 
-import { AboutPageLazy } from "pages/AboutPage";
-import { MainPageLazy } from "pages/MainPage";
+import { AboutPage } from "pages/AboutPage";
+import { MainPage } from "pages/MainPage";
+import { ProfilePage } from "pages/ProfilePage";
 import { NotFoundPage } from "pages/NotFoudPage";
 
 export enum AppRoutes {
     MAIN = "main",
+    PROFILE = "profile",
     ABOUT = "about",
     NOT_FOUND = "not_found",
     FORBIDDEN = "forbidden",
@@ -13,6 +15,7 @@ export enum AppRoutes {
 
 export const RouterPath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: "/",
+    [AppRoutes.PROFILE]: "/profile",
     [AppRoutes.ABOUT]: "/about",
     [AppRoutes.NOT_FOUND]: "/*",
     [AppRoutes.FORBIDDEN]: "/forbidden",
@@ -21,11 +24,15 @@ export const RouterPath: Record<AppRoutes, string> = {
 export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.MAIN]: {
         path: RouterPath.main,
-        element: <MainPageLazy />,
+        element: <MainPage />,
+    },
+    [AppRoutes.PROFILE]: {
+        path: RouterPath.profile,
+        element: <ProfilePage />,
     },
     [AppRoutes.ABOUT]: {
         path: RouterPath.about,
-        element: <AboutPageLazy />,
+        element: <AboutPage />,
     },
     [AppRoutes.NOT_FOUND]: {
         path: RouterPath.not_found,
