@@ -44,6 +44,7 @@ module.exports = {
         "react-hooks/exhaustive-deps": "error", // Checks effect dependencies
         "@typescript-eslint/no-var-requires": 0,
         "react/display-name": "off",
+        "no-undef": "off",
     },
     settings: {
         react: {

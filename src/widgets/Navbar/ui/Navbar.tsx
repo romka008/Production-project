@@ -14,6 +14,7 @@ export const Navbar = memo(() => {
     const { t } = useTranslation();
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
+    console.log(authData);
 
     const onToggleModal = useCallback(() => {
         setIsAuthModal(prev => !prev);

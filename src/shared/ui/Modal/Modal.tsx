@@ -16,7 +16,7 @@ const ANIMATION_DELAY = 300;
 
 export const Modal = ({ className, isOpen, onClose, lazy, children }: IModalProps) => {
     const [isClosing, setIsClosing] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const [isMounted, setIsMounted] = useState(false);
     useEffect(() => {
         if (isOpen) {
@@ -53,7 +53,9 @@ export const Modal = ({ className, isOpen, onClose, lazy, children }: IModalProp
         }
 
         return () => {
-            clearTimeout(timerRef.current);
+            if (timerRef.current) {
+                clearTimeout(timerRef.current);
+            }
         };
     }, [isOpen, onKeyDown]);
 
