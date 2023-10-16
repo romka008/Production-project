@@ -1,10 +1,8 @@
 .profileCard {
+    display: flex;
+    flex-direction: column;
     border: 2px solid var(--inverted-bg-color);
     padding: 20px;
-}
-
-.header {
-    display: flex;
 }
 
 .editBtn {
@@ -12,8 +10,36 @@
 }
 
 .data {
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.avatarWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.field {
+    display: flex;
+    gap: 8px;
+    label {
+        width: 100px;
+    }
+    :last-child {
+        flex-grow: 1;
+    }
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    height: 200px;
+}
+
+.editing {
+    border: 2px solid var(--inverted-primary-color);
 }

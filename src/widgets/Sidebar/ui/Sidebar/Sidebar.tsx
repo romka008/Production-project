@@ -26,7 +26,6 @@ export const Sidebar = memo(({ className }: ISidebarProps) => {
             className={classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [className])}
             data-testid="sidebar"
         >
-            =
             <Button
                 className={styles.collpseBtn}
                 data-testid="sidebar-toggle"

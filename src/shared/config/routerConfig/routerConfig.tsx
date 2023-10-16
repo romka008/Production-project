@@ -13,6 +13,11 @@ export enum AppRoutes {
     FORBIDDEN = "forbidden",
 }
 
+export type AppRouteProps = RouteProps & {
+    authOnly?: boolean;
+    // roles?: UserRole[];
+};
+
 export const RouterPath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: "/",
     [AppRoutes.PROFILE]: "/profile",
@@ -21,7 +26,7 @@ export const RouterPath: Record<AppRoutes, string> = {
     [AppRoutes.FORBIDDEN]: "/forbidden",
 };
 
-export const routeConfig: Record<AppRoutes, RouteProps> = {
+export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.MAIN]: {
         path: RouterPath.main,
         element: <MainPage />,
@@ -29,6 +34,7 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.PROFILE]: {
         path: RouterPath.profile,
         element: <ProfilePage />,
+        authOnly: true,
     },
     [AppRoutes.ABOUT]: {
         path: RouterPath.about,
