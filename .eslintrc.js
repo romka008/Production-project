@@ -45,6 +45,7 @@ module.exports = {
         "@typescript-eslint/no-var-requires": 0,
         "react/display-name": "off",
         "no-undef": "off",
+        "no-fallthrough": "off",
     },
     settings: {
         react: {
