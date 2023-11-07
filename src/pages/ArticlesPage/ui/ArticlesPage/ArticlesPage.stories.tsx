@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { PageError } from "./PageError";
+import ArticlesPage from "./ArticlesPage";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 
-const meta: Meta<typeof PageError> = {
-    title: "widgets/PageError",
-    component: PageError,
+const meta: Meta<typeof ArticlesPage> = {
+    title: "pages/ArticlesPage",
+    component: ArticlesPage,
     // parameters: {
     //     layout: "centered",
     // },
@@ -15,7 +15,7 @@ const meta: Meta<typeof PageError> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PageError>;
+type Story = StoryObj<typeof ArticlesPage>;
 
 export const Light: Story = {
     args: {},

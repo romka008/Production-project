@@ -28,7 +28,7 @@ export const Light: Story = {
     ],
 };
 
-export const Dard: Story = {
+export const Dark: Story = {
     args: {},
     decorators: [
         ThemeDecorator(Theme.DARK),
