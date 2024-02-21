@@ -1,13 +1,9 @@
 .title {
-    font-size: var(--font-size-l);
-    line-height: var(--font-line-l);
     color: var(--primary-color);
 }
 
 .text {
-    font-size: var(--font-size-m);
-    line-height: var(--font-line-m);
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .error {
@@ -30,4 +26,26 @@
 
 .center {
     text-align: center;
+}
+
+.size_m {
+    .title {
+        font-size: var(--font-size-l);
+        line-height: var(--font-line-l);
+    }
+    .text {
+        font-size: var(--font-size-m);
+        line-height: var(--font-line-m);
+    }
+}
+
+.size_l {
+    .title {
+        font-size: var(--font-size-xl);
+        line-height: var(--font-line-xl);
+    }
+    .text {
+        font-size: var(--font-size-l);
+        line-height: var(--font-line-l);
+    }
 }

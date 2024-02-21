@@ -1,0 +1,25 @@
+import { memo } from "react";
+
+import { Text } from "shared/ui/Text/Text";
+import { ArcticleTextBlock } from "../../model/types/article";
+
+import styles from "./ArticleTextBlockComponent.module.scss";
+import { classNames } from "shared/lib/classNames/classNames";
+
+interface IArticleTextBlockComponentProps {
+    block: ArcticleTextBlock;
+    className?: string;
+}
+
+export const ArticleTextBlockComponent = memo(
+    ({ block, className }: IArticleTextBlockComponentProps) => {
+        return (
+            <div className={classNames(styles.articleTextBlockComponent, {}, [className])}>
+                {block.title && <Text className={styles.title} title={block.title} />}
+                {block.paragraphs.map(paragraph => (
+                    <Text key={paragraph} text={paragraph} className={styles.paragraph} />
+                ))}
+            </div>
+        );
+    }
+);

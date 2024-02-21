@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Text, TextTheme } from "./Text";
+import { Text, TextSize, TextTheme } from "./Text";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 
@@ -64,4 +64,20 @@ export const OnlyTextDark: Story = {
         text: "Только текст, темная тема",
     },
     decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const SizeL: Story = {
+    args: {
+        title: "Заголовок",
+        text: "Некоторый текст",
+        size: TextSize.L,
+    },
+};
+
+export const SizeM: Story = {
+    args: {
+        title: "Заголовок",
+        text: "Некоторый текст",
+        size: TextSize.M,
+    },
 };
