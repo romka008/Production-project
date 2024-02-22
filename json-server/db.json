@@ -124,13 +124,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://e7.pngegg.com/pngimages/109/949/png-clipart-computer-software-management-business-service-technical-support-sugarplum-miscellaneous-infographic.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://kartinki.pibig.info/uploads/posts/2023-04/1682095256_kartinki-pibig-info-p-kartinka-neizvestnogo-cheloveka-arti-vkont-59.png"
     }
   ],
   "profile": {
@@ -141,6 +143,6 @@
     "country": "Russia",
     "city": "Москва",
     "username": "admin",
-    "avatar": "https://www.sh45.ru/images/Foto-2023/20.03.20233/1.jpg"
+    "avatar": "https://kartinki.pibig.info/uploads/posts/2023-04/1682095256_kartinki-pibig-info-p-kartinka-neizvestnogo-cheloveka-arti-vkont-59.png"
   }
 }
