@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
@@ -11,6 +11,7 @@ import {
 } from "shared/lib/DynamicModuleLoader/DynamicModuleLoader";
 import { useInitialEffect } from "shared/lib/hooks/UseInitialEffect/UseInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { AddNewComment } from "features/AddNewComment";
 import { ArticleDetails } from "../../../../entities/Article";
 import { CommentList } from "../../../../entities/Comment";
 import {
@@ -18,7 +19,8 @@ import {
     getArticleComments,
 } from "../../model/slices/ArticleDetailsCommentsSlice";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
-import { fetchCommentByArticleId } from "../../model/services/fetchCommentBeArticleId/fetchCommentByArticleId";
+import { fetchCommentByArticleId } from "../../model/services/fetchCommentByArticleId/fetchCommentByArticleId";
+import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticleaddCommentForArticle";
 
 import styles from "./ArticleDetailsPage.module.scss";
 
@@ -29,9 +31,16 @@ const initialReducers: ReducerList = {
 const ArticleDetailsPage = () => {
     const { t } = useTranslation("article");
     const { id } = useParams<{ id: string }>();
+    const dispatch = useAppDispatch();
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const dispatch = useAppDispatch();
+
+    const onSendComment = useCallback(
+        (text: string) => {
+            dispatch(addCommentForArticle(text));
+        },
+        [dispatch]
+    );
 
     useInitialEffect(() => {
         dispatch(fetchCommentByArticleId(id));
@@ -49,6 +58,7 @@ const ArticleDetailsPage = () => {
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <div className={classNames(styles.articleDetailsPage, {}, [])}>
                 <ArticleDetails id={id} />
+                <AddNewComment onSendComment={onSendComment} />
                 <Text className={styles.commentTitle} title={t("Комментарии")} />
                 <CommentList comments={comments} isLoading={commentsIsLoading} />
             </div>

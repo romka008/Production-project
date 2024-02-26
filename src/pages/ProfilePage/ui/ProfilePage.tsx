@@ -1,4 +1,5 @@
 import { useCallback, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
@@ -19,6 +20,7 @@ import {
     profileReducer,
 } from "../../../entities/Profile";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useInitialEffect } from "shared/lib/hooks/UseInitialEffect/UseInitialEffect";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency/model/type/currency";
@@ -42,6 +44,7 @@ const ProfilePage = ({ className }: IProfilePageProps) => {
     const error = useSelector(getProfileError);
     const readOnly = useSelector(getProfileReadOnly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{ id: string }>();
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t("Ошибка сервера при сохранении"),
@@ -52,11 +55,11 @@ const ProfilePage = ({ className }: IProfilePageProps) => {
         [ValidateProfileError.INCORRECT_COUNTRY]: t("Некорректный регион"),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== "storybook") {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstName = useCallback(
         (value?: string) => {

@@ -24,7 +24,7 @@ export type AppRouteProps = RouteProps & {
 
 export const RouterPath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: "/",
-    [AppRoutes.PROFILE]: "/profile",
+    [AppRoutes.PROFILE]: "/profile/", // + :id
     [AppRoutes.ABOUT]: "/about",
     [AppRoutes.ARTICLES]: "/articles",
     [AppRoutes.ARTICLE_DETAILS]: "/articles/", // + :id
@@ -38,7 +38,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
         element: <MainPage />,
     },
     [AppRoutes.PROFILE]: {
-        path: RouterPath.profile,
+        path: `${RouterPath.profile}:id`,
         element: <ProfilePage />,
         authOnly: true,
     },

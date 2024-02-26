@@ -117,6 +117,36 @@
       "text": "комментарий пользователя",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Мой первый комментарий к этой статье",
+      "id": "TV5R9pv"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Комментарий пользователя к первой статье",
+      "id": "tqv_nZM"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Второй комментарий пользователя",
+      "id": "rHWdNXJ"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Комментарий",
+      "id": "8SjAqWB"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Хахах",
+      "id": "uclxKuB"
     }
   ],
   "users": [
@@ -135,14 +165,28 @@
       "avatar": "https://kartinki.pibig.info/uploads/posts/2023-04/1682095256_kartinki-pibig-info-p-kartinka-neizvestnogo-cheloveka-arti-vkont-59.png"
     }
   ],
-  "profile": {
-    "first": "Роман",
-    "lastname": "Андреевич",
-    "age": 15,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Москва",
-    "username": "admin",
-    "avatar": "https://kartinki.pibig.info/uploads/posts/2023-04/1682095256_kartinki-pibig-info-p-kartinka-neizvestnogo-cheloveka-arti-vkont-59.png"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Роман",
+      "lastname": "Андреевич",
+      "age": 15,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Москва",
+      "username": "admin",
+      "avatar": "https://e7.pngegg.com/pngimages/109/949/png-clipart-computer-software-management-business-service-technical-support-sugarplum-miscellaneous-infographic.png"
+    },
+    {
+      "id": "2",
+      "first": "Александр",
+      "lastname": "Петров",
+      "age": 20,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Москва",
+      "username": "Sanya",
+      "avatar": "https://kartinki.pibig.info/uploads/posts/2023-04/1682095256_kartinki-pibig-info-p-kartinka-neizvestnogo-cheloveka-arti-vkont-59.png"
+    }
+  ]
 }
