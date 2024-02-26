@@ -4,7 +4,7 @@ import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDeco
 import LoginForm from "./LoginForm";
 
 const meta: Meta<typeof LoginForm> = {
-    title: "shared/LoginForm",
+    title: "features/LoginForm",
     component: LoginForm,
     // parameters: {
     //     layout: "centered",
