@@ -5,6 +5,11 @@ import { Article, ArticleBlockType, ArticleType } from "../../types/article";
 const data: Article = {
     id: "1",
     title: "Javascript news",
+    user: {
+        id: "1",
+        username: "Ivan",
+        avatar: "http://klubmama.ru/uploads/posts/2022-08/1661819225_44-klubmama-ru-p-kot-v-sapogakh-podelka-foto-44.jpg",
+    },
     subtitle: "Что нового в JS за 2023 год",
     img: "https://pnggallery.com/wp-content/uploads/javascript-logo-04.png",
     views: 1022,

@@ -2,12 +2,12 @@ import { memo } from "react";
 
 import { classNames } from "shared/lib/classNames/classNames";
 import { Text, TextAlign } from "shared/ui/Text/Text";
-import { ArcticleImageBlock } from "../../model/types/article";
+import { ArticleImageBlock } from "../../model/types/article";
 
 import styles from "./ArticleImageBlockComponent.module.scss";
 
 interface IArticleImageBlockComponentProps {
-    block: ArcticleImageBlock;
+    block: ArticleImageBlock;
     className?: string;
 }
 

@@ -1,9 +1,24 @@
-import { articleDetailsReducer } from "./articleDetailsSlice";
-import { fetchArticleById } from "../services/fetchArticleById/fetchArticleById";
-import { Article, ArticleBlockType, ArticleType } from "../types/article";
-import { ArticleDetailsSchema } from "../types/articleDetailsSchema";
+import type { Meta, StoryObj } from "@storybook/react";
 
-const data: Article = {
+import { ArticleListItem } from "./ArticleListItem";
+import { Article, ArticleBlockType, ArticleType, ArticleView } from "../../model/types/article";
+import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "app/providers/ThemeProvider";
+
+const meta: Meta<typeof ArticleListItem> = {
+    title: "entities/Article/ArticleListItem",
+    component: ArticleListItem,
+    // parameters: {
+    //     layout: "centered",
+    // },
+    tags: ["autodocs"],
+    argTypes: {},
+};
+
+export default meta;
+type Story = StoryObj<typeof ArticleListItem>;
+
+const article: Article = {
     id: "1",
     title: "Javascript news",
     user: {
@@ -27,44 +42,23 @@ const data: Article = {
                 "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>.",
             ],
         },
-        {
-            id: "6",
-            type: ArticleBlockType.IMAGE,
-            title: "Сообщение, выведенное средствами JavaScript в HTML-элемент",
-            src: "https://habrastorage.org/r/w1560/getpro/habr/post_images/465/185/884/465185884cda3070549c035a37a7a3e8.png",
-        },
     ],
 };
 
-describe("articleDetailsSlice.test", () => {
-    test("test article service pending", () => {
-        const state: DeepPartial<ArticleDetailsSchema> = {
-            isLoading: false,
-            error: undefined,
-        };
+export const List: Story = {
+    args: { article: article, view: ArticleView.LIST },
+};
 
-        expect(
-            articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.pending)
-        ).toEqual({
-            isLoading: true,
-            error: undefined,
-        });
-    });
+export const ListDark: Story = {
+    args: { article: article, view: ArticleView.LIST },
+    decorators: [ThemeDecorator(Theme.DARK)],
+};
 
-    test("test article service fulfilled", () => {
-        const state: DeepPartial<ArticleDetailsSchema> = {
-            isLoading: true,
-            error: undefined,
-        };
+export const Plate: Story = {
+    args: { article: article, view: ArticleView.PLATE },
+};
 
-        expect(
-            articleDetailsReducer(
-                state as ArticleDetailsSchema,
-                fetchArticleById.fulfilled(data, "", "")
-            )
-        ).toEqual({
-            data: data,
-            isLoading: false,
-        });
-    });
-});
+export const PlateDark: Story = {
+    args: { article: article, view: ArticleView.PLATE },
+    decorators: [ThemeDecorator(Theme.DARK)],
+};

@@ -2,12 +2,12 @@ import { memo } from "react";
 
 import { classNames } from "shared/lib/classNames/classNames";
 import { Code } from "shared/ui/Code/Code";
-import { ArcticleCodeBlock } from "../../model/types/article";
+import { ArticleCodeBlock } from "../../model/types/article";
 
 import styles from "./ArticleCodeBlockComponent.module.scss";
 
 interface IArticleCodeBlockComponentProps {
-    block: ArcticleCodeBlock;
+    block: ArticleCodeBlock;
     className?: string;
 }
 

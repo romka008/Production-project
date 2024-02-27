@@ -8,7 +8,7 @@ import {
 } from "shared/lib/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
-import { Skeleton } from "shared/ui/Sceleton/Skeleton";
+import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import { Icon } from "shared/ui/Icon/Icon";
 import { classNames } from "shared/lib/classNames/classNames";

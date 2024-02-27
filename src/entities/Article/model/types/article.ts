@@ -1,3 +1,5 @@
+import { User } from "../../../../entities/User";
+
 export enum ArticleBlockType {
     TEXT = "TEXT",
     IMAGE = "IMAGE",
@@ -9,24 +11,24 @@ export interface ArticleBlockBase {
     type: ArticleBlockType;
 }
 
-export interface ArcticleCodeBlock extends ArticleBlockBase {
+export interface ArticleCodeBlock extends ArticleBlockBase {
     code: string;
     type: ArticleBlockType.CODE;
 }
 
-export interface ArcticleImageBlock extends ArticleBlockBase {
+export interface ArticleImageBlock extends ArticleBlockBase {
     src: string;
     title: string;
     type: ArticleBlockType.IMAGE;
 }
 
-export interface ArcticleTextBlock extends ArticleBlockBase {
+export interface ArticleTextBlock extends ArticleBlockBase {
     paragraphs: string[];
     type: ArticleBlockType.TEXT;
     title?: string;
 }
 
-export type ArticleBlock = ArcticleCodeBlock | ArcticleImageBlock | ArcticleTextBlock;
+export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
 
 export enum ArticleType {
     IT = "IT",
@@ -34,9 +36,15 @@ export enum ArticleType {
     ECONOMICS = "ECONOMICS",
 }
 
+export enum ArticleView {
+    LIST = "LIST",
+    PLATE = "PLATE",
+}
+
 export interface Article {
     id: string;
     title: string;
+    user: User;
     subtitle: string;
     img: string;
     views: number;

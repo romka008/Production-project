@@ -1,13 +1,13 @@
 import { memo } from "react";
 
 import { Text } from "shared/ui/Text/Text";
-import { ArcticleTextBlock } from "../../model/types/article";
+import { classNames } from "shared/lib/classNames/classNames";
+import { ArticleTextBlock } from "../../model/types/article";
 
 import styles from "./ArticleTextBlockComponent.module.scss";
-import { classNames } from "shared/lib/classNames/classNames";
 
 interface IArticleTextBlockComponentProps {
-    block: ArcticleTextBlock;
+    block: ArticleTextBlock;
     className?: string;
 }
 
