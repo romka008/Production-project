@@ -19,7 +19,7 @@ import { CommentList } from "../../../../entities/Comment";
 import {
     ArticleDetailsCommentReducer,
     getArticleComments,
-} from "../../model/slices/ArticleDetailsCommentsSlice";
+} from "../../model/slices/articleDetailsCommentsSlice";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { fetchCommentByArticleId } from "../../model/services/fetchCommentByArticleId/fetchCommentByArticleId";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticleaddCommentForArticle";
@@ -66,8 +66,8 @@ const ArticleDetailsPage = () => {
             <div className={classNames(styles.articleDetailsPage, {}, [])}>
                 <Button onClick={onBackToList}>{t("Назад к списку")}</Button>
                 <ArticleDetails id={id} />
-                <AddNewComment onSendComment={onSendComment} />
                 <Text className={styles.commentTitle} title={t("Комментарии")} />
+                <AddNewComment onSendComment={onSendComment} />
                 <CommentList comments={comments} isLoading={commentsIsLoading} />
             </div>
         </DynamicModuleLoader>
