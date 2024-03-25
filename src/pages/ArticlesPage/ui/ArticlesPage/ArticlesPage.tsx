@@ -11,13 +11,13 @@ import { useInitialEffect } from "shared/lib/hooks/UseInitialEffect/UseInitialEf
 import { Page } from "shared/ui/Page/Page";
 import { fetchNextArticlesPage } from "pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { ArticleList, ArticleListViewSelector, ArticleView } from "../../../../entities/Article";
-import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import {
     articlePageActions,
     ArticlePageReducer,
     getArticles,
 } from "../../model/slices/articlesPageSlice";
 import { getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/articles";
+import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 
 import styles from "./ArticlesPage.module.scss";
 
@@ -37,8 +37,7 @@ const ArticlesPage = () => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(articlePageActions.initView());
-        dispatch(fetchArticlesList({ page: 1 }));
+        dispatch(initArticlesPage());
     });
 
     const onChangeView = useCallback(
@@ -49,7 +48,7 @@ const ArticlesPage = () => {
     );
 
     return (
-        <DynamicModuleLoader reducers={initialReducers}>
+        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={false}>
             <Page onScrollEnd={onLoadNextPart}>
                 <ArticleListViewSelector view={articlesView} onViewClick={onChangeView} />
                 <ArticleList
