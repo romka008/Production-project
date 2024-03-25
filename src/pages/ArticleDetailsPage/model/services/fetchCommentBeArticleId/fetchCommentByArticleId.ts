@@ -1,25 +1,22 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { ThunkConfig } from "app/providers/StoreProvider";
-import { Article } from "../../../../../entities/Article";
-import { getArticlesPageLimit } from "../../selectors/articles";
+import { Comment } from "../../../../../entities/Comment";
 
-interface FetchArticlesListProps {
-    page?: number;
-}
-
-export const fetchArticlesList = createAsyncThunk<
-    Article[],
-    FetchArticlesListProps,
+export const fetchCommentByArticleId = createAsyncThunk<
+    Comment[],
+    string | undefined,
     ThunkConfig<string>
->("articlesPage/fetchArticlesList", async ({ page = 1 }, { extra, rejectWithValue, getState }) => {
-    const perPage = getArticlesPageLimit(getState());
+>("article/fetchCommentByArticleId", async (articleId, { extra, rejectWithValue }) => {
+    if (!articleId) {
+        return rejectWithValue("error");
+    }
+
     try {
-        const response = await extra.api.get<Article[]>(`/articles`, {
+        const response = await extra.api.get<Comment[]>(`/comments`, {
             // данный код необходим для получения сущности пользователя из "users" по "id" пользователя в "json-server"
             params: {
+                articleId,
                 _expand: "user",
-                _page: page,
-                _limit: perPage,
             },
         });
 

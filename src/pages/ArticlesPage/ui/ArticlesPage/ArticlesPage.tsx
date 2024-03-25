@@ -8,6 +8,8 @@ import {
 } from "shared/lib/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/UseInitialEffect/UseInitialEffect";
+import { Page } from "shared/ui/Page/Page";
+import { fetchNextArticlesPage } from "pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { ArticleList, ArticleListViewSelector, ArticleView } from "../../../../entities/Article";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 import {
@@ -27,12 +29,16 @@ const ArticlesPage = () => {
     const { t } = useTranslation("article");
     const dispatch = useAppDispatch();
     const articles = useSelector(getArticles.selectAll);
-    const articlesIsLoading = useSelector(getArticlesPageIsLoading);
+    const isLoading = useSelector(getArticlesPageIsLoading);
     const articlesView = useSelector(getArticlesPageView);
 
+    const onLoadNextPart = useCallback(() => {
+        dispatch(fetchNextArticlesPage());
+    }, [dispatch]);
+
     useInitialEffect(() => {
-        dispatch(fetchArticlesList());
         dispatch(articlePageActions.initView());
+        dispatch(fetchArticlesList({ page: 1 }));
     });
 
     const onChangeView = useCallback(
@@ -44,16 +50,18 @@ const ArticlesPage = () => {
 
     return (
         <DynamicModuleLoader reducers={initialReducers}>
-            <ArticleListViewSelector view={articlesView} onViewClick={onChangeView} />
-            <ArticleList
-                view={articlesView}
-                articles={articles}
-                isLoading={articlesIsLoading}
-                // articles={new Array(16)
-                //     .fill(0)
-                //     .map((el, index) => ({ ...article, id: String(index) }))}
-            />
-            {/* <ArticleList articles={[article]} /> */}
+            <Page onScrollEnd={onLoadNextPart}>
+                <ArticleListViewSelector view={articlesView} onViewClick={onChangeView} />
+                <ArticleList
+                    view={articlesView}
+                    articles={articles}
+                    isLoading={isLoading}
+                    // articles={new Array(16)
+                    //     .fill(0)
+                    //     .map((el, index) => ({ ...article, id: String(index) }))}
+                />
+                {/* <ArticleList articles={[article]} /> */}
+            </Page>
         </DynamicModuleLoader>
     );
 };

@@ -26,10 +26,6 @@ const getSkeletons = (view: ArticleView) => {
 
 export const ArticleList = memo(
     ({ articles, className, isLoading, view = ArticleView.PLATE }: IArticleListProps) => {
-        if (isLoading) {
-            return getSkeletons(view);
-        }
-
         const renderArticle = (article: Article) => {
             return (
                 <ArticleListItem
@@ -43,6 +39,7 @@ export const ArticleList = memo(
         return (
             <div className={classNames(styles.articleList, {}, [className, styles[view]])}>
                 {articles.length > 0 ? articles.map(renderArticle) : null}
+                {isLoading && getSkeletons(view)}
             </div>
         );
     }

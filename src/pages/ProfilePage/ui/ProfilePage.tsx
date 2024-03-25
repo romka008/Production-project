@@ -27,6 +27,7 @@ import { Currency } from "entities/Currency/model/type/currency";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 
 import styles from "./ProfilePage.module.scss";
+import { Page } from "shared/ui/Page/Page";
 
 interface IProfilePageProps {
     className?: string;
@@ -121,31 +122,33 @@ const ProfilePage = ({ className }: IProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={resucers} removeAfterUnmount>
-            <ProfilePageHeader />
-            {validateErrors?.length &&
-                validateErrors.map(err => {
-                    return (
-                        <Text
-                            theme={TextTheme.ERROR}
-                            text={validateErrorTranslates[err]}
-                            key={err}
-                        />
-                    );
-                })}
-            <ProfileCard
-                formData={formData}
-                isLoading={isLoading}
-                error={error}
-                readOnly={readOnly}
-                onChangeFirstName={onChangeFirstName}
-                onChangeLastName={onChangeLastName}
-                onChangeCity={onChangeCity}
-                onChangeAge={onChangeAge}
-                onChangeUsername={onChangeUsername}
-                onChangeAvatar={onChangeAvatar}
-                onChangeCurrency={onChangeCurrency}
-                onChangeCountry={onChangeCountry}
-            />
+            <Page>
+                <ProfilePageHeader />
+                {validateErrors?.length &&
+                    validateErrors.map(err => {
+                        return (
+                            <Text
+                                theme={TextTheme.ERROR}
+                                text={validateErrorTranslates[err]}
+                                key={err}
+                            />
+                        );
+                    })}
+                <ProfileCard
+                    formData={formData}
+                    isLoading={isLoading}
+                    error={error}
+                    readOnly={readOnly}
+                    onChangeFirstName={onChangeFirstName}
+                    onChangeLastName={onChangeLastName}
+                    onChangeCity={onChangeCity}
+                    onChangeAge={onChangeAge}
+                    onChangeUsername={onChangeUsername}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
+                />
+            </Page>
         </DynamicModuleLoader>
     );
 };

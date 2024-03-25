@@ -13,13 +13,14 @@ import { useInitialEffect } from "shared/lib/hooks/UseInitialEffect/UseInitialEf
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Button } from "shared/ui/Button/Button";
 import { RouterPath } from "shared/config/routerConfig/routerConfig";
+import { Page } from "shared/ui/Page/Page";
 import { AddNewComment } from "features/AddNewComment";
 import { ArticleDetails } from "../../../../entities/Article";
 import { CommentList } from "../../../../entities/Comment";
 import {
     ArticleDetailsCommentReducer,
     getArticleComments,
-} from "../../model/slices/articleDetailsCommentsSlice";
+} from "../../model/slices/ArticleDetailsCommentsSlice";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { fetchCommentByArticleId } from "../../model/services/fetchCommentByArticleId/fetchCommentByArticleId";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticleaddCommentForArticle";
@@ -63,13 +64,13 @@ const ArticleDetailsPage = () => {
 
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
-            <div className={classNames(styles.articleDetailsPage, {}, [])}>
+            <Page className={classNames(styles.articleDetailsPage, {}, [])}>
                 <Button onClick={onBackToList}>{t("Назад к списку")}</Button>
                 <ArticleDetails id={id} />
                 <Text className={styles.commentTitle} title={t("Комментарии")} />
                 <AddNewComment onSendComment={onSendComment} />
                 <CommentList comments={comments} isLoading={commentsIsLoading} />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
