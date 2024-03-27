@@ -8,7 +8,7 @@ import {
 } from "shared/lib/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/UseInitialEffect/UseInitialEffect";
-import { Page } from "shared/ui/Page/Page";
+import { Page } from "widgets/Page/Page";
 import { fetchNextArticlesPage } from "pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { ArticleList, ArticleListViewSelector, ArticleView } from "../../../../entities/Article";
 import {

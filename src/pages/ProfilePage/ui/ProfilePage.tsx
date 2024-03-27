@@ -27,7 +27,7 @@ import { Currency } from "entities/Currency/model/type/currency";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 
 import styles from "./ProfilePage.module.scss";
-import { Page } from "shared/ui/Page/Page";
+import { Page } from "widgets/Page/Page";
 
 interface IProfilePageProps {
     className?: string;

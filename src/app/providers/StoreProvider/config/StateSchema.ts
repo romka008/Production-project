@@ -1,4 +1,3 @@
-import { NavigateOptions, To } from "react-router-dom";
 import {
     AnyAction,
     CombinedState,
@@ -15,10 +14,12 @@ import { LoginSchema } from "features/AuthByUsername";
 import { ArticleDetalsCommentsSchema } from "pages/ArticleDetailsPage";
 import { AddNewCommentSchema } from "features/AddNewComment";
 import { ArticlesPageSchema } from "pages/ArticlesPage";
+import { ScrollSaveSchema } from "features/ScrollSave";
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    scrollSave: ScrollSaveSchema;
 
     // Асинхронные редьюсеры
     loginForm?: LoginSchema;
