@@ -10,16 +10,19 @@ export enum AppLinkTheme {
 }
 
 interface IAppLinkProps extends LinkProps {
-    to: string;
     children: ReactNode;
     className?: string;
     theme?: AppLinkTheme;
 }
 
 export const AppLink = memo(
-    ({ to, className, theme = AppLinkTheme.PRIMARY, children }: IAppLinkProps) => {
+    ({ to, className, theme = AppLinkTheme.PRIMARY, children, ...otherProps }: IAppLinkProps) => {
         return (
-            <Link className={classNames(styles.appLink, {}, [className, styles[theme]])} to={to}>
+            <Link
+                className={classNames(styles.appLink, {}, [className, styles[theme]])}
+                to={to}
+                {...otherProps}
+            >
                 {children}
             </Link>
         );
