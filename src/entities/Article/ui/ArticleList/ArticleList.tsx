@@ -6,6 +6,8 @@ import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 
 import styles from "./ArticleList.module.scss";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSceleton";
+import { Text } from "shared/ui/Text/Text";
+import { useTranslation } from "react-i18next";
 
 interface IArticleListProps {
     articles: Article[];
@@ -26,6 +28,7 @@ const getSkeletons = (view: ArticleView) => {
 
 export const ArticleList = memo(
     ({ articles, className, isLoading, view = ArticleView.PLATE }: IArticleListProps) => {
+        const { t } = useTranslation("article");
         const renderArticle = (article: Article) => {
             return (
                 <ArticleListItem
@@ -36,6 +39,14 @@ export const ArticleList = memo(
                 />
             );
         };
+
+        if (!isLoading && !articles.length) {
+            return (
+                <div className={classNames(styles.articleList, {}, [className, styles[view]])}>
+                    <Text title={t("Статьи не найдены")} />
+                </div>
+            );
+        }
         return (
             <div className={classNames(styles.articleList, {}, [className, styles[view]])}>
                 {articles.length > 0 ? articles.map(renderArticle) : null}

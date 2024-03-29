@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import ArticlesPage from "./ArticlesPage";
+import ArticleSortSelector from "./ArticleSortSelector";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 
-const meta: Meta<typeof ArticlesPage> = {
-    title: "pages/ArticlesPage",
-    component: ArticlesPage,
+const meta: Meta<typeof ArticleSortSelector> = {
+    title: "features/ArticleSortSelector",
+    component: ArticleSortSelector,
     // parameters: {
     //     layout: "centered",
     // },
@@ -16,14 +16,13 @@ const meta: Meta<typeof ArticlesPage> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticlesPage>;
+type Story = StoryObj<typeof ArticleSortSelector>;
 
-export const Light: Story = {
+export const Normal: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.LIGHT), StoreDecorator({})],
 };
 
 export const Dark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

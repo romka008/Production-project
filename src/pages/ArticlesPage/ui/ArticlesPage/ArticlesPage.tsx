@@ -1,6 +1,7 @@
 import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { useSearchParams } from "react-router-dom";
 
 import {
     DynamicModuleLoader,
@@ -10,14 +11,11 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/UseInitialEffect/UseInitialEffect";
 import { Page } from "widgets/Page/Page";
 import { fetchNextArticlesPage } from "pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
-import { ArticleList, ArticleListViewSelector, ArticleView } from "../../../../entities/Article";
-import {
-    articlePageActions,
-    ArticlePageReducer,
-    getArticles,
-} from "../../model/slices/articlesPageSlice";
+import { ArticleList } from "../../../../entities/Article";
+import { ArticlePageReducer, getArticles } from "../../model/slices/articlesPageSlice";
 import { getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/articles";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
+import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
 
 import styles from "./ArticlesPage.module.scss";
 
@@ -31,30 +29,25 @@ const ArticlesPage = () => {
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlesPageIsLoading);
     const articlesView = useSelector(getArticlesPageView);
+    const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(initArticlesPage());
+        dispatch(initArticlesPage(searchParams));
     });
-
-    const onChangeView = useCallback(
-        (view: ArticleView) => {
-            dispatch(articlePageActions.setView(view));
-        },
-        [dispatch]
-    );
 
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={false}>
             <Page onScrollEnd={onLoadNextPart}>
-                <ArticleListViewSelector view={articlesView} onViewClick={onChangeView} />
+                <ArticlesPageFilters />
                 <ArticleList
                     view={articlesView}
                     articles={articles}
                     isLoading={isLoading}
+                    className={styles.list}
                     // articles={new Array(16)
                     //     .fill(0)
                     //     .map((el, index) => ({ ...article, id: String(index) }))}

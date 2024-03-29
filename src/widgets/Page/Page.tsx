@@ -34,7 +34,6 @@ export const Page = ({ className, children, onScrollEnd }: IPageProps) => {
     });
 
     const onScroll = useThrottle((e: UIEvent<HTMLElement>) => {
-        console.log(e.currentTarget.scrollTop);
         dispatch(
             scrollSaveActions.setScrollPosition({
                 path: location.pathname,
@@ -49,7 +48,8 @@ export const Page = ({ className, children, onScrollEnd }: IPageProps) => {
             className={classNames(styles.page, {}, [className])}
             onScroll={onScroll}
         >
-            {children} <div ref={triggerRef} />
+            {children}
+            {onScrollEnd ? <div className={styles.trigger} ref={triggerRef} /> : null}
         </section>
     );
 };

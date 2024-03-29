@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
@@ -25,9 +25,9 @@ import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency/model/type/currency";
 import { Text, TextTheme } from "shared/ui/Text/Text";
+import { Page } from "widgets/Page/Page";
 
 import styles from "./ProfilePage.module.scss";
-import { Page } from "widgets/Page/Page";
 
 interface IProfilePageProps {
     className?: string;
