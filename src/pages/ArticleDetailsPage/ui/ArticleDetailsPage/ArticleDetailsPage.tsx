@@ -1,7 +1,7 @@
 import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { classNames } from "shared/lib/classNames/classNames";
 import { Text, TextSize } from "shared/ui/Text/Text";
@@ -11,31 +11,21 @@ import {
 } from "shared/lib/DynamicModuleLoader/DynamicModuleLoader";
 import { useInitialEffect } from "shared/lib/hooks/UseInitialEffect/UseInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Button } from "shared/ui/Button/Button";
-import { RouterPath } from "shared/config/routerConfig/routerConfig";
 import { Page } from "widgets/Page/Page";
 import { AddNewComment } from "features/AddNewComment";
 import { ArticleDetails, ArticleList } from "../../../../entities/Article";
 import { CommentList } from "../../../../entities/Comment";
-import {
-    ArticleDetailsCommentReducer,
-    getArticleComments,
-} from "../../model/slices/ArticleDetailsCommentsSlice";
+import { getArticleComments } from "../../model/slices/ArticleDetailsCommentsSlice";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { fetchCommentByArticleId } from "../../model/services/fetchCommentByArticleId/fetchCommentByArticleId";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticleaddCommentForArticle";
-
-import styles from "./ArticleDetailsPage.module.scss";
-import {
-    ArticleDetailsPageRecommendationsReducer,
-    getArticleRecommendations,
-} from "../../model/slices/ArticleDetailsPageRecommendationsSlice";
-import {
-    getArticleRecommendationsIsError,
-    getArticleRecommendationsIsLoading,
-} from "../../model/selectors/recommendations";
+import { getArticleRecommendations } from "../../model/slices/ArticleDetailsPageRecommendationsSlice";
+import { getArticleRecommendationsIsLoading } from "../../model/selectors/recommendations";
 import { fetchArticleRecommendations } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
 import { articleDetailsPageReducer } from "../../model/slices";
+import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
+
+import styles from "./ArticleDetailsPage.module.scss";
 
 const initialReducers: ReducerList = {
     articleDetailsPage: articleDetailsPageReducer,
@@ -49,12 +39,6 @@ const ArticleDetailsPage = () => {
     const recommendations = useSelector(getArticleRecommendations.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
-
-    const navigate = useNavigate();
-
-    const onBackToList = useCallback(() => {
-        navigate(RouterPath.articles);
-    }, [navigate]);
 
     const onSendComment = useCallback(
         (text: string) => {
@@ -79,7 +63,7 @@ const ArticleDetailsPage = () => {
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <Page className={classNames(styles.articleDetailsPage, {}, [])}>
-                <Button onClick={onBackToList}>{t("Назад к списку")}</Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text size={TextSize.L} className={styles.commentTitle} title={t("Рекомендуем")} />
                 <ArticleList
