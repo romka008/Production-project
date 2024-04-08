@@ -10,7 +10,7 @@ import {
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/UseInitialEffect/UseInitialEffect";
 import { Page } from "widgets/Page/Page";
-import { fetchNextArticlesPage } from "pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage";
+import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { ArticleList } from "../../../../entities/Article";
 import { ArticlePageReducer, getArticles } from "../../model/slices/articlesPageSlice";
 import { getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/articles";

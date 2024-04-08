@@ -6,7 +6,7 @@ import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
 import { ThemeSwitcher } from "widgets/ThemeSwitcher";
 import { LangSwitcher } from "widgets/LangSwitcher";
 
-import { getSidebarItems } from "widgets/Sidebar/model/selectors/getSidebarItems";
+import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
 
 import styles from "./Sidebar.module.scss";

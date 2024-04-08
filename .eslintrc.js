@@ -32,7 +32,7 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: ["@typescript-eslint", "react", "react-hooks"],
+    plugins: ["@typescript-eslint", "react", "react-hooks", "eslint-check"],
     rules: {
         indent: [2, 4],
         linebreakStyle: 0,
@@ -46,6 +46,7 @@ module.exports = {
         "react/display-name": "off",
         "no-undef": "off",
         "no-fallthrough": "off",
+        "eslint-check/path-checker": "error",
     },
     settings: {
         react: {
