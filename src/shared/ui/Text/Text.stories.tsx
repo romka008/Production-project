@@ -81,3 +81,11 @@ export const SizeM: Story = {
         size: TextSize.M,
     },
 };
+
+export const SizeS: Story = {
+    args: {
+        title: "Заголовок",
+        text: "Некоторый текст",
+        size: TextSize.S,
+    },
+};
