@@ -18,6 +18,7 @@ import {
 } from "../../model/selectors/addNewCommentSelectors";
 
 import styles from "./AddNewComment.module.scss";
+import { HStack } from "shared/ui/Stack";
 
 export interface IAddNewCommentProps {
     className?: string;
@@ -50,7 +51,7 @@ const AddNewComment = ({ className, onSendComment }: IAddNewCommentProps) => {
 
     return (
         <DynamicModuleLoader reducers={initialReducers}>
-            <div className={classNames(styles.addNewComment, {}, [className])}>
+            <HStack max gap="8" className={classNames(styles.addNewComment, {}, [className])}>
                 {error && <Text text={t("Произошла ошибка")} theme={TextTheme.ERROR} />}
                 <Input
                     placeholder={t("Введите текст комментария")}
@@ -60,7 +61,7 @@ const AddNewComment = ({ className, onSendComment }: IAddNewCommentProps) => {
                     value={text ?? ""}
                 />
                 <Button onClick={onSendHandler}>{t("Отправить")}</Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     );
 };

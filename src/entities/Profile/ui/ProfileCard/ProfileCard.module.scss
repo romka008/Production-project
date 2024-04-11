@@ -9,28 +9,12 @@
     margin-left: auto;
 }
 
-.data {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.label {
+    width: 100px;
 }
 
-.avatarWrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.field {
-    display: flex;
-    gap: 8px;
-    label {
-        width: 100px;
-    }
-    :last-child {
-        flex-grow: 1;
-    }
+.input {
+    flex-grow: 1;
 }
 
 .loading {

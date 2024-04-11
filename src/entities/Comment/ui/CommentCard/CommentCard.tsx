@@ -7,6 +7,7 @@ import { RouterPath } from "shared/config/routerConfig/routerConfig";
 import { Comment } from "../../";
 
 import styles from "./CommentCard.module.scss";
+import { VStack } from "shared/ui/Stack";
 
 interface ICommentCardProps {
     className?: string;
@@ -18,10 +19,10 @@ export const CommentCard = ({ className, comment, isLoading }: ICommentCardProps
     if (isLoading) {
         return (
             <div className={classNames(styles.commentCard, {}, [className, styles.loading])}>
-                <div className={styles.header}>
+                <VStack gap="8">
                     <Skeleton width={30} height={30} border={"50%"} />
                     <Skeleton width={60} height={16} />
-                </div>
+                </VStack>
                 <Skeleton className={styles.text} height={40} />
             </div>
         );
@@ -32,12 +33,12 @@ export const CommentCard = ({ className, comment, isLoading }: ICommentCardProps
     }
 
     return (
-        <div className={classNames(styles.commentCard, {}, [className])}>
+        <VStack gap="8" max className={classNames(styles.commentCard, {}, [className])}>
             <AppLink to={`${RouterPath.profile}${comment.user.id}`} className={styles.header}>
                 {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
                 <Text title={comment.user.username} />
             </AppLink>
             <Text className={styles.text} text={comment.text} />
-        </div>
+        </VStack>
     );
 };

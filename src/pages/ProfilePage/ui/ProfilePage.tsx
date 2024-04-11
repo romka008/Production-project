@@ -28,6 +28,7 @@ import { Text, TextTheme } from "shared/ui/Text/Text";
 import { Page } from "widgets/Page/Page";
 
 import styles from "./ProfilePage.module.scss";
+import { VStack } from "shared/ui/Stack/Vstack/VStack";
 
 interface IProfilePageProps {
     className?: string;
@@ -123,31 +124,33 @@ const ProfilePage = ({ className }: IProfilePageProps) => {
     return (
         <DynamicModuleLoader reducers={resucers} removeAfterUnmount>
             <Page>
-                <ProfilePageHeader />
-                {validateErrors?.length &&
-                    validateErrors.map(err => {
-                        return (
-                            <Text
-                                theme={TextTheme.ERROR}
-                                text={validateErrorTranslates[err]}
-                                key={err}
-                            />
-                        );
-                    })}
-                <ProfileCard
-                    formData={formData}
-                    isLoading={isLoading}
-                    error={error}
-                    readOnly={readOnly}
-                    onChangeFirstName={onChangeFirstName}
-                    onChangeLastName={onChangeLastName}
-                    onChangeCity={onChangeCity}
-                    onChangeAge={onChangeAge}
-                    onChangeUsername={onChangeUsername}
-                    onChangeAvatar={onChangeAvatar}
-                    onChangeCurrency={onChangeCurrency}
-                    onChangeCountry={onChangeCountry}
-                />
+                <VStack max gap="16">
+                    <ProfilePageHeader />
+                    {validateErrors?.length &&
+                        validateErrors.map(err => {
+                            return (
+                                <Text
+                                    theme={TextTheme.ERROR}
+                                    text={validateErrorTranslates[err]}
+                                    key={err}
+                                />
+                            );
+                        })}
+                    <ProfileCard
+                        formData={formData}
+                        isLoading={isLoading}
+                        error={error}
+                        readOnly={readOnly}
+                        onChangeFirstName={onChangeFirstName}
+                        onChangeLastName={onChangeLastName}
+                        onChangeCity={onChangeCity}
+                        onChangeAge={onChangeAge}
+                        onChangeUsername={onChangeUsername}
+                        onChangeAvatar={onChangeAvatar}
+                        onChangeCurrency={onChangeCurrency}
+                        onChangeCountry={onChangeCountry}
+                    />
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     );
