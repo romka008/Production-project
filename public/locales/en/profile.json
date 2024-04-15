@@ -24,5 +24,7 @@
   "Имя и фамилия обязательны": "First and last name are required",
   "Некорректный возраст": "Incorrect age",
   "Некорректный регион": "Invalid region",
-  "Город обязательн": "City is required"
+  "Город обязательн": "City is required",
+  "Укажите валюту": "Specify currency",
+  "Укажите страну": "Indicate your country currency"
 }
