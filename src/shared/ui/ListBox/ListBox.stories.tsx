@@ -12,6 +12,7 @@ const meta: Meta<typeof ListBox> = {
     // },
     tags: ["autodocs"],
     argTypes: {},
+    decorators: [Story => <div style={{ padding: "100px" }}>{<Story />}</div>],
 };
 
 export default meta;
@@ -56,10 +57,34 @@ export const DarkReadonly: Story = {
     decorators: [ThemeDecorator(Theme.DARK)],
 };
 
-export const DarkDirectionTop: Story = {
+export const DarkDirectionTopRight: Story = {
     args: {
         items: options,
         defaultValue: "Выберите страну",
-        direction: "top",
+        direction: "top right",
+    },
+};
+
+export const DarkDirectionTopLeft: Story = {
+    args: {
+        items: options,
+        defaultValue: "Выберите страну",
+        direction: "top left",
+    },
+};
+
+export const DarkDirectionBottomRight: Story = {
+    args: {
+        items: options,
+        defaultValue: "Выберите страну",
+        direction: "bottom right",
+    },
+};
+
+export const DarkDirectionBottomLeft: Story = {
+    args: {
+        items: options,
+        defaultValue: "123",
+        direction: "bottom left",
     },
 };

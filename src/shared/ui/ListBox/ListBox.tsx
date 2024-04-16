@@ -1,9 +1,12 @@
 import { Fragment, ReactNode } from "react";
 import { Listbox as HListbox } from "@headlessui/react";
 
-import styles from "./ListBox.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
+import { TDropdownDirection } from "shared/types/ui";
 import { Button } from "../Button/Button";
+
+import styles from "./ListBox.module.scss";
+import { HStack } from "../Stack";
 
 const people = [
     { id: 1, name: "Durward Reynolds", unavailable: false },
@@ -29,11 +32,11 @@ interface IListBoxProps {
     direction?: TDropdownDirection;
 }
 
-type TDropdownDirection = "top" | "bottom";
-
 const mapDirectionClass: Record<TDropdownDirection, string> = {
-    top: styles.optionsTop,
-    bottom: styles.optionsBottom,
+    "top left": styles.optionsTopLeft,
+    "top right": styles.optionsTopRight,
+    "bottom left": styles.optionsBottomLeft,
+    "bottom right": styles.optionsBottomRight,
 };
 
 export const ListBox = ({
@@ -43,43 +46,45 @@ export const ListBox = ({
     defaultValue,
     onChange,
     readOnly,
-    direction = "bottom",
+    direction = "bottom right",
 }: IListBoxProps) => {
     const optionsClasses = [mapDirectionClass[direction]];
 
     return (
-        <HListbox
-            as="div"
-            className={classNames(styles.listBox, {}, [className])}
-            value={value}
-            onChange={onChange}
-            disabled={readOnly}
-        >
-            <HListbox.Button aria-disabled={readOnly} as="div">
-                <Button disabled={readOnly}>{value ?? defaultValue}</Button>
-            </HListbox.Button>
-            <HListbox.Options className={classNames(styles.options, {}, optionsClasses)}>
-                {items?.map(item => (
-                    <HListbox.Option
-                        key={item.value}
-                        value={item.value}
-                        as={Fragment}
-                        disabled={item.disabled}
-                    >
-                        {({ active, selected }) => (
-                            <li
-                                className={classNames(styles.option, {
-                                    [styles.active]: active,
-                                    [styles.selected]: selected,
-                                    [styles.disabled]: item.disabled,
-                                })}
-                            >
-                                {item.content}
-                            </li>
-                        )}
-                    </HListbox.Option>
-                ))}
-            </HListbox.Options>
-        </HListbox>
+        <HStack>
+            <HListbox
+                as="div"
+                className={classNames(styles.listBox, {}, [className])}
+                value={value}
+                onChange={onChange}
+                disabled={readOnly}
+            >
+                <HListbox.Button as="span">
+                    <Button disabled={readOnly}>{value ?? defaultValue}</Button>
+                </HListbox.Button>
+                <HListbox.Options className={classNames(styles.options, {}, optionsClasses)}>
+                    {items?.map(item => (
+                        <HListbox.Option
+                            key={item.value}
+                            value={item.value}
+                            as={Fragment}
+                            disabled={item.disabled}
+                        >
+                            {({ active, selected }) => (
+                                <li
+                                    className={classNames(styles.option, {
+                                        [styles.active]: active,
+                                        [styles.selected]: selected,
+                                        [styles.disabled]: item.disabled,
+                                    })}
+                                >
+                                    {item.content}
+                                </li>
+                            )}
+                        </HListbox.Option>
+                    ))}
+                </HListbox.Options>
+            </HListbox>
+        </HStack>
     );
 };

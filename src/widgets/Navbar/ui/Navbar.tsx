@@ -10,6 +10,8 @@ import { LoginModal } from "features/AuthByUsername";
 import { userActions, getUserAuthData } from "../../../entities/User";
 
 import styles from "./Navbar.module.scss";
+import { Dropdown } from "shared/ui/Dropdown/Dropdown";
+import { Avatar } from "shared/ui/Avatar/Avatar";
 
 export const Navbar = memo(() => {
     const [isAuthModal, setIsAuthModal] = useState(false);
@@ -37,13 +39,21 @@ export const Navbar = memo(() => {
                 >
                     {t("Создать статью")}
                 </AppLink>
-                <Button
-                    theme={ButtonTheme.CLEAR_INVERTED}
-                    className={styles.links}
-                    onClick={onLogout}
-                >
-                    {t("Выйти")}
-                </Button>
+                <Dropdown
+                    className={styles.dropdown}
+                    trigger={<Avatar size={30} src={authData.avatar} />}
+                    items={[
+                        {
+                            content: t("Профиль"),
+                            href: RouterPath.profile + authData.id,
+                        },
+                        {
+                            content: t("Выйти"),
+                            onClick: onLogout,
+                        },
+                    ]}
+                    direction="bottom left"
+                />
             </header>
         );
     }
