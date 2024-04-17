@@ -42,7 +42,7 @@ export const ArticleList = memo(
             );
         };
 
-        if (!isLoading && !articles.length) {
+        if (!isLoading && !articles?.length) {
             return (
                 <div className={classNames(styles.articleList, {}, [className, styles[view]])}>
                     <Text title={t("Статьи не найдены")} />
@@ -51,7 +51,7 @@ export const ArticleList = memo(
         }
         return (
             <div className={classNames(styles.articleList, {}, [className, styles[view]])}>
-                {articles.length > 0 ? articles.map(renderArticle) : null}
+                {articles?.length > 0 ? articles.map(renderArticle) : null}
                 {isLoading && getSkeletons(view)}
             </div>
         );

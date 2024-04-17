@@ -1,6 +1,4 @@
 import { memo, useCallback } from "react";
-import { useSelector } from "react-redux";
-import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 
 import {
@@ -11,11 +9,10 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/UseInitialEffect/UseInitialEffect";
 import { Page } from "widgets/Page/Page";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
-import { ArticleList } from "../../../../entities/Article";
-import { ArticlePageReducer, getArticles } from "../../model/slices/articlesPageSlice";
-import { getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/articles";
+import { ArticlePageReducer } from "../../model/slices/articlesPageSlice";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
+import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList";
 
 import styles from "./ArticlesPage.module.scss";
 
@@ -24,11 +21,7 @@ const initialReducers: ReducerList = {
 };
 
 const ArticlesPage = () => {
-    const { t } = useTranslation("article");
     const dispatch = useAppDispatch();
-    const articles = useSelector(getArticles.selectAll);
-    const isLoading = useSelector(getArticlesPageIsLoading);
-    const articlesView = useSelector(getArticlesPageView);
     const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
@@ -43,15 +36,8 @@ const ArticlesPage = () => {
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={false}>
             <Page onScrollEnd={onLoadNextPart}>
                 <ArticlesPageFilters />
-                <ArticleList
-                    view={articlesView}
-                    articles={articles}
-                    isLoading={isLoading}
-                    className={styles.list}
-                    // articles={new Array(16)
-                    //     .fill(0)
-                    //     .map((el, index) => ({ ...article, id: String(index) }))}
-                />
+                <ArticleInfiniteList className={styles.list} />
+
                 {/* <ArticleList articles={[article]} /> */}
             </Page>
         </DynamicModuleLoader>

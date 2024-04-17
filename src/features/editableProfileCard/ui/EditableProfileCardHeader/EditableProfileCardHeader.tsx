@@ -2,28 +2,26 @@ import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { HStack } from "shared/ui/Stack";
 import { Text } from "shared/ui/Text/Text";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { HStack } from "shared/ui/Stack/HStack/HStack";
-import {
-    getProfileData,
-    getProfileReadOnly,
-    profileActions,
-    updateProfileData,
-} from "../../../../entities/Profile";
+import { profileActions } from "features/editableProfileCard/model/slice/profileSlice";
+import { getProfileReadOnly } from "features/editableProfileCard/model/selectors/getProfileReadOnly/getProfileReadOnly";
+import { getProfileFormData } from "features/editableProfileCard/model/selectors/getProfileFormData/getProfileFormData";
+import { updateProfileData } from "features/editableProfileCard/model/services/updateProfileData/updateProfileData";
 import { getUserAuthData } from "../../../../entities/User";
 
-interface IProfilePageHeaderProps {
+interface IEditableProfileCardHeaderProps {
     className?: string;
 }
 
-export const ProfilePageHeader = ({ className }: IProfilePageHeaderProps) => {
+export const EditableProfileCardHeader = ({ className }: IEditableProfileCardHeaderProps) => {
     const { t } = useTranslation("profile");
     const readOnly = useSelector(getProfileReadOnly);
     const dispatch = useAppDispatch();
     const authData = useSelector(getUserAuthData);
-    const profileData = useSelector(getProfileData);
+    const profileData = useSelector(getProfileFormData);
     const isCanEdit = authData?.id === profileData?.id;
 
     const onEdit = useCallback(() => {
