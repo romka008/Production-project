@@ -10,7 +10,7 @@ import { Text } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
 
 interface IArticleListProps {
-    articles: Article[];
+    articles?: Article[];
     className?: string;
     isLoading?: boolean;
     view?: ArticleView;
@@ -28,7 +28,13 @@ const getSkeletons = (view: ArticleView) => {
 };
 
 export const ArticleList = memo(
-    ({ articles, className, isLoading, view = ArticleView.PLATE, target }: IArticleListProps) => {
+    ({
+        articles = [],
+        className,
+        isLoading,
+        view = ArticleView.PLATE,
+        target,
+    }: IArticleListProps) => {
         const { t } = useTranslation("article");
         const renderArticle = (article: Article) => {
             return (

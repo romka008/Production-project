@@ -92,6 +92,7 @@ export const ProfileCard = ({
                     className={styles.input}
                     onChange={onChangeFirstName}
                     readOnly={readOnly}
+                    data-testid="ProfileCard.first"
                 />
             </HStack>
             <HStack gap="8" max>
@@ -102,6 +103,7 @@ export const ProfileCard = ({
                     className={styles.input}
                     onChange={onChangeLastName}
                     readOnly={readOnly}
+                    data-testid="ProfileCard.lastname"
                 />
             </HStack>
             <HStack gap="8" max>
