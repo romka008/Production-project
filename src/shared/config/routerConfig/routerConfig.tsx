@@ -51,6 +51,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
         path: `${RouterPath.profile}:id`,
         element: <ProfilePage />,
         authOnly: true,
+        roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.USER],
     },
     [AppRoutes.ABOUT]: {
         path: RouterPath.about,
@@ -60,21 +61,25 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
         path: RouterPath.articles,
         element: <ArticlesPage />,
         authOnly: true,
+        roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.USER],
     },
     [AppRoutes.ARTICLE_DETAILS]: {
         path: `${RouterPath.article_details}:id`,
         element: <ArticleDetailsPage />,
         authOnly: true,
+        roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.USER],
     },
     [AppRoutes.ARTICLE_CREATE]: {
         path: `${RouterPath.article_create}`,
         element: <ArticleEditPage />,
         authOnly: true,
+        roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.USER],
     },
     [AppRoutes.ARTICLE_EDIT]: {
         path: `${RouterPath.article_edit}`,
         element: <ArticleEditPage />,
         authOnly: true,
+        roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.USER],
     },
     [AppRoutes.ADMIN_PANEL]: {
         path: `${RouterPath.admin_panel}`,
