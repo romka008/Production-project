@@ -807,15 +807,28 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://e7.pngegg.com/pngimages/109/949/png-clipart-computer-software-management-business-service-technical-support-sugarplum-miscellaneous-infographic.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://kartinki.pibig.info/uploads/posts/2023-04/1682095256_kartinki-pibig-info-p-kartinka-neizvestnogo-cheloveka-arti-vkont-59.png"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ],
+      "avatar": "https://peopletalk.ru/wp-content/uploads/2019/06/b69x9359-683x1024.jpg"
     }
   ],
   "profile": [
@@ -840,6 +853,17 @@
       "city": "Москва",
       "username": "Sanya",
       "avatar": "https://kartinki.pibig.info/uploads/posts/2023-04/1682095256_kartinki-pibig-info-p-kartinka-neizvestnogo-cheloveka-arti-vkont-59.png"
+    },
+    {
+      "id": "3",
+      "first": "Анастасия",
+      "lastname": "Уколова",
+      "age": 25,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Москва",
+      "username": "Kate",
+      "avatar": "https://peopletalk.ru/wp-content/uploads/2019/06/b69x9359-683x1024.jpg"
     }
   ]
 }

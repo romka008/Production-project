@@ -1,3 +1,4 @@
+import "whatwg-fetch";
 import { fireEvent, screen } from "@testing-library/react";
 import { userEvent } from "@storybook/testing-library";
 import { Counter } from "./Counter";

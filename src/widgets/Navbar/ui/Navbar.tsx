@@ -7,7 +7,7 @@ import { Text, TextTheme } from "shared/ui/Text/Text";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { RouterPath } from "shared/config/routerConfig/routerConfig";
 import { LoginModal } from "features/AuthByUsername";
-import { userActions, getUserAuthData } from "../../../entities/User";
+import { userActions, getUserAuthData, isUserAdmin, isUserManager } from "../../../entities/User";
 
 import styles from "./Navbar.module.scss";
 import { Dropdown } from "shared/ui/Dropdown/Dropdown";
@@ -18,7 +18,8 @@ export const Navbar = memo(() => {
     const { t } = useTranslation();
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
-    console.log(authData);
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
 
     const onToggleModal = useCallback(() => {
         setIsAuthModal(prev => !prev);
@@ -27,6 +28,8 @@ export const Navbar = memo(() => {
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
+
+    const isAdminPanelAvailable = isAdmin || isManager;
 
     if (authData) {
         return (
@@ -43,6 +46,14 @@ export const Navbar = memo(() => {
                     className={styles.dropdown}
                     trigger={<Avatar size={30} src={authData.avatar} />}
                     items={[
+                        ...(isAdminPanelAvailable
+                            ? [
+                                {
+                                    content: t("Админка"),
+                                    href: RouterPath.admin_panel,
+                                },
+                            ]
+                            : []),
                         {
                             content: t("Профиль"),
                             href: RouterPath.profile + authData.id,
