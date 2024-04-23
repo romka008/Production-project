@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import ArticleDetailsPage from "./ArticleDetailsPage";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
-import { Article, ArticleBlockType, ArticleType } from "../../../../entities/Article/model/types/article";
+import { Article, ArticleBlockType, ArticleType } from "../../../../entities/Article";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 
 const meta: Meta<typeof ArticleDetailsPage> = {
@@ -54,10 +54,13 @@ const article: Article = {
 
 export const Light: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.LIGHT), StoreDecorator({articleDetails: {data: article}})],
+    decorators: [
+        ThemeDecorator(Theme.LIGHT),
+        StoreDecorator({ articleDetails: { data: article } }),
+    ],
 };
 
 export const Dark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({articleDetails: {data: article}})],
+    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({ articleDetails: { data: article } })],
 };

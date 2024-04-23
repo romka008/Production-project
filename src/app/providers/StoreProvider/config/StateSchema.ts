@@ -16,6 +16,7 @@ import { ProfileSchema } from "features/editableProfileCard";
 import { ScrollSaveSchema } from "features/ScrollSave";
 import { ArticlesPageSchema } from "pages/ArticlesPage";
 import { rtkApi } from "shared/api/rtkApi";
+import { createReduxStore } from "./store";
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -54,3 +55,5 @@ export interface ThunkConfig<T> {
     extra: ThunkExtraArg;
     state: StateSchema;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>["dispatch"];

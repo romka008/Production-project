@@ -2,7 +2,7 @@ import { Modal } from "shared/ui/Modal/Modal";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Suspense } from "react";
 import { LoginFormLazy } from "../LoginForm/LoginForm.async";
-import { Loader } from "widgets/Loader/ui/Loader";
+import { Loader } from "widgets/Loader";
 
 interface ILoginModalProps {
     isOpen: boolean;

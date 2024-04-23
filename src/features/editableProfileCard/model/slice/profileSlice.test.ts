@@ -1,4 +1,5 @@
-import { ProfileSchema, ValidateProfileError } from "../types/editableProfileCardSchema";
+import { ProfileSchema } from "../types/editableProfileCardSchema";
+import { ValidateProfileError } from "../consts/consts";
 import { profileActions, profileReducer } from "./profileSlice";
 import { Currency } from "../../../../entities/Currency";
 import { Country } from "../../../../entities/Country";

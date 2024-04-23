@@ -11,12 +11,8 @@ import { RouterPath } from "shared/config/routerConfig/routerConfig";
 import { AppLink } from "shared/ui/AppLink/AppLink";
 import EyeIcon from "widgets/assets/icons/eye-20-20.svg";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
-import {
-    Article,
-    ArticleBlockType,
-    ArticleTextBlock,
-    ArticleView,
-} from "../../model/types/article";
+import { Article, ArticleTextBlock } from "../../model/types/article";
+import { ArticleBlockType, ArticleView } from "../../model/consts/articleConstst";
 
 import styles from "./ArticleListItem.module.scss";
 

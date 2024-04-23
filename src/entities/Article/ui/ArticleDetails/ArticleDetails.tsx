@@ -22,7 +22,8 @@ import {
     getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from "../../model/selectors/ArticleDetails";
-import { ArticleBlock, ArticleBlockType } from "../../../Article/model/types/article";
+import { ArticleBlock } from "../../../Article/model/types/article";
+import { ArticleBlockType } from "../../model/consts/articleConstst";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";

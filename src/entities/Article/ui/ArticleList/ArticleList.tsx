@@ -1,7 +1,8 @@
 import { HTMLAttributeAnchorTarget, memo } from "react";
 
 import { classNames } from "shared/lib/classNames/classNames";
-import { Article, ArticleView } from "../../model/types/article";
+import { Article } from "../../model/types/article";
+import { ArticleView } from "../../model/consts/articleConstst";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 
 import styles from "./ArticleList.module.scss";
