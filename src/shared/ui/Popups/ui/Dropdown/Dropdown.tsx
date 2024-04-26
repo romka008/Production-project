@@ -14,6 +14,7 @@ export interface IDropDownItem {
     content?: ReactNode;
     onClick?: () => void;
     href?: string;
+    key?: string;
 }
 
 interface IDropdownProps {
@@ -54,7 +55,7 @@ export const Dropdown = ({
                             <Menu.Item
                                 as={AppLink}
                                 to={item.href}
-                                key={"123"}
+                                key={item.key}
                                 disabled={item.disabled}
                             >
                                 {content}

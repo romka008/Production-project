@@ -14,6 +14,8 @@ import { AvatarDropdown } from "features/avatarDropdown";
 import { getUserAuthData } from "../../../entities/User";
 
 import styles from "./Navbar.module.scss";
+import { Drawer } from "shared/ui/Drawer/Drawer";
+import { NotificationList } from "entities/Notification";
 
 export const Navbar = memo(() => {
     const [isAuthModal, setIsAuthModal] = useState(false);

@@ -47,16 +47,19 @@ export const AvatarDropdown = memo(({ className }: IAvatarDropdownProps) => {
                         {
                             content: t("Админка"),
                             href: RouterPath.admin_panel,
+                            key: "1",
                         },
                     ]
                     : []),
                 {
                     content: t("Профиль"),
                     href: RouterPath.profile + authData.id,
+                    key: "2",
                 },
                 {
                     content: t("Выйти"),
                     onClick: onLogout,
+                    key: "3",
                 },
             ]}
             direction="bottom left"

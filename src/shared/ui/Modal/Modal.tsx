@@ -1,6 +1,7 @@
 import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Portal } from "../Portal/Portal";
+import { Overlay } from "../Overlay/Overlay";
 
 import styles from "./Modal.module.scss";
 
@@ -72,10 +73,9 @@ export const Modal = ({ className, isOpen, onClose, lazy, children }: IModalProp
                     [className]
                 )}
             >
-                <div className={styles.overlay} onClick={closeHandler}>
-                    <div className={styles.content} onClick={onContentClick}>
-                        {children}
-                    </div>
+                <Overlay onClick={closeHandler} />
+                <div className={styles.content} onClick={onContentClick}>
+                    {children}
                 </div>
             </div>
         </Portal>
