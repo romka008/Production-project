@@ -1,10 +1,13 @@
+import { Fragment, ReactNode } from "react";
 import { Menu } from "@headlessui/react";
 
-import styles from "./Dropdown.module.scss";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Fragment, ReactNode } from "react";
 import { TDropdownDirection } from "shared/types/ui";
-import { AppLink } from "../AppLink/AppLink";
+import { AppLink } from "../../../AppLink/AppLink";
+import { mapDirectionClass } from "../../styles/consts";
+
+import styles from "./Dropdown.module.scss";
+import popupStyles from "../../styles/popup.module.scss";
 
 export interface IDropDownItem {
     disabled?: boolean;
@@ -12,13 +15,6 @@ export interface IDropDownItem {
     onClick?: () => void;
     href?: string;
 }
-
-const mapDirectionClass: Record<TDropdownDirection, string> = {
-    "top left": styles.optionsTopLeft,
-    "top right": styles.optionsTopRight,
-    "bottom left": styles.optionsBottomLeft,
-    "bottom right": styles.optionsBottomRight,
-};
 
 interface IDropdownProps {
     className?: string;
@@ -36,14 +32,18 @@ export const Dropdown = ({
     const menuClasses = [mapDirectionClass[direction]];
 
     return (
-        <Menu as="div" className={classNames(styles.dropdown, {}, [className])}>
-            <Menu.Button className={styles.btn}>{trigger}</Menu.Button>
+        <Menu as="div" className={classNames(styles.dropdown, {}, [className, popupStyles.popup])}>
+            <Menu.Button className={popupStyles.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(styles.menu, {}, menuClasses)}>
                 {items?.map(item => {
                     const content = ({ active }: { active: boolean }) => (
                         <button
                             onClick={item.onClick}
-                            className={classNames(styles.item, { [styles.active]: active }, [])}
+                            className={classNames(
+                                styles.item,
+                                { [popupStyles.active]: active },
+                                []
+                            )}
                             disabled={item.disabled}
                         >
                             {item.content}

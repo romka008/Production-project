@@ -3,7 +3,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from "app/providers/ThemeProvider";
 
 import { Dropdown } from "./Dropdown";
-import { Button } from "../Button/Button";
+import { Button } from "../../../Button/Button";
 
 const meta: Meta<typeof Dropdown> = {
     title: "shared/Dropdown",

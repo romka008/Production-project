@@ -3,10 +3,12 @@ import { Listbox as HListbox } from "@headlessui/react";
 
 import { classNames } from "shared/lib/classNames/classNames";
 import { TDropdownDirection } from "shared/types/ui";
-import { Button } from "../Button/Button";
+import { Button } from "../../../Button/Button";
+import { HStack } from "../../../Stack";
+import { mapDirectionClass } from "../../styles/consts";
 
 import styles from "./ListBox.module.scss";
-import { HStack } from "../Stack";
+import popupStyles from "../../styles/popup.module.scss";
 
 const people = [
     { id: 1, name: "Durward Reynolds", unavailable: false },
@@ -32,13 +34,6 @@ interface IListBoxProps {
     direction?: TDropdownDirection;
 }
 
-const mapDirectionClass: Record<TDropdownDirection, string> = {
-    "top left": styles.optionsTopLeft,
-    "top right": styles.optionsTopRight,
-    "bottom left": styles.optionsBottomLeft,
-    "bottom right": styles.optionsBottomRight,
-};
-
 export const ListBox = ({
     items,
     className,
@@ -54,7 +49,7 @@ export const ListBox = ({
         <HStack>
             <HListbox
                 as="div"
-                className={classNames(styles.listBox, {}, [className])}
+                className={classNames(styles.listBox, {}, [className, popupStyles.popup])}
                 value={value}
                 onChange={onChange}
                 disabled={readOnly}
@@ -73,9 +68,9 @@ export const ListBox = ({
                             {({ active, selected }) => (
                                 <li
                                     className={classNames(styles.option, {
-                                        [styles.active]: active,
-                                        [styles.selected]: selected,
-                                        [styles.disabled]: item.disabled,
+                                        [popupStyles.active]: active,
+                                        [popupStyles.selected]: selected,
+                                        [popupStyles.disabled]: item.disabled,
                                     })}
                                 >
                                     {item.content}
