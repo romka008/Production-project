@@ -6,7 +6,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import {
     DynamicModuleLoader,
     ReducerList,
-} from "shared/lib/DynamicModuleLoader/DynamicModuleLoader";
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { ArticleRecommendationsList } from "features/articleRecommendationsList";
 import { VStack } from "shared/ui/Stack";
 import { Page } from "widgets/Page/Page";

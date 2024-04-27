@@ -20,7 +20,7 @@ import { ValidateProfileError } from "features/editableProfileCard/model/consts/
 import {
     DynamicModuleLoader,
     ReducerList,
-} from "shared/lib/DynamicModuleLoader/DynamicModuleLoader";
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { EditableProfileCardHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader";
 
 interface IEditableProfileCardProps {

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import {
     DynamicModuleLoader,
     ReducerList,
-} from "shared/lib/DynamicModuleLoader/DynamicModuleLoader";
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";

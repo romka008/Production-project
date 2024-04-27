@@ -9,7 +9,7 @@ import { Text, TextTheme } from "shared/ui/Text/Text";
 import {
     DynamicModuleLoader,
     ReducerList,
-} from "shared/lib/DynamicModuleLoader/DynamicModuleLoader";
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";

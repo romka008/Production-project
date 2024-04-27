@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import {
     DynamicModuleLoader,
     ReducerList,
-} from "shared/lib/DynamicModuleLoader/DynamicModuleLoader";
+} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "shared/lib/hooks/UseInitialEffect/UseInitialEffect";
 import { Page } from "widgets/Page/Page";
