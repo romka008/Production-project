@@ -55,6 +55,11 @@
 
     .content {
         transform: translateY(0%);
-        transition: 0.3s transform;
+    }
+}
+
+.isClosing {
+    .content {
+        transform: translateY(100%);
     }
 }

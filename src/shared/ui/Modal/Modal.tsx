@@ -1,9 +1,10 @@
-import { ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import { ReactNode } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Portal } from "../Portal/Portal";
 import { Overlay } from "../Overlay/Overlay";
 
 import styles from "./Modal.module.scss";
+import { useModal } from "shared/lib/hooks/useModal/useModal";
 
 interface IModalProps {
     className?: string;
@@ -16,49 +17,15 @@ interface IModalProps {
 const ANIMATION_DELAY = 300;
 
 export const Modal = ({ className, isOpen, onClose, lazy, children }: IModalProps) => {
-    const [isClosing, setIsClosing] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-    const [isMounted, setIsMounted] = useState(false);
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true);
-        }
-    }, [isOpen]);
-
-    const closeHandler = useCallback(() => {
-        if (onClose) {
-            setIsClosing(true);
-            timerRef.current = setTimeout(() => {
-                onClose();
-                setIsClosing(false);
-            }, ANIMATION_DELAY);
-        }
-    }, [onClose]);
-
-    const onKeyDown = useCallback(
-        (e: globalThis.KeyboardEvent) => {
-            if (e.key === "Escape") {
-                closeHandler();
-            }
-        },
-        [closeHandler]
-    );
+    const { close, isMounted, isClosing } = useModal({
+        animationDelay: ANIMATION_DELAY,
+        isOpen,
+        onClose,
+    });
 
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();
     };
-
-    useEffect(() => {
-        if (isOpen) {
-            window.addEventListener("keydown", onKeyDown);
-        }
-
-        return () => {
-            if (timerRef.current) {
-                clearTimeout(timerRef.current);
-            }
-        };
-    }, [isOpen, onKeyDown]);
 
     if (lazy && !isMounted) {
         return null;
@@ -73,7 +40,7 @@ export const Modal = ({ className, isOpen, onClose, lazy, children }: IModalProp
                     [className]
                 )}
             >
-                <Overlay onClick={closeHandler} />
+                <Overlay onClick={close} />
                 <div className={styles.content} onClick={onContentClick}>
                     {children}
                 </div>
