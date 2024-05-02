@@ -1,6 +1,4 @@
 import { ReactNode, memo, useCallback, useEffect } from "react";
-// import { useSpring, a, config } from "@react-spring/web";
-// import { useDrag } from "@use-gesture/react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useModal } from "@/shared/lib/hooks/useModal/useModal";
@@ -9,7 +7,7 @@ import { Portal } from "../Portal/Portal";
 import { Overlay } from "../Overlay/Overlay";
 
 import styles from "./Drawer.module.scss";
-import { useAnimationLibs } from "@/shared/lib/components/AnimationProvider";
+import { AnimationProvider, useAnimationLibs } from "@/shared/lib/components/AnimationProvider";
 
 interface IDrawerProps {
     className?: string;
@@ -99,7 +97,7 @@ export const DrawerContent = memo(
     }
 );
 
-export const Drawer = memo((props: IDrawerProps) => {
+const DrawerAsync = (props: IDrawerProps) => {
     const { isLoaded } = useAnimationLibs();
 
     if (!isLoaded) {
@@ -107,4 +105,12 @@ export const Drawer = memo((props: IDrawerProps) => {
     }
 
     return <DrawerContent {...props} />;
-});
+};
+
+export const Drawer = (props: IDrawerProps) => {
+    return (
+        <AnimationProvider>
+            <DrawerAsync {...props} />
+        </AnimationProvider>
+    );
+};
