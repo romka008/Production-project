@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { ArticleDetails } from "./ArticleDetails";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { Article } from "../../model/types/article";
 import { ArticleBlockType, ArticleType } from "../../model/consts/articleConstst";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "app/providers/ThemeProvider";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/app/providers/ThemeProvider";
 
 const meta: Meta<typeof ArticleDetails> = {
     title: "entities/Article/ArticleDetails",
@@ -120,7 +120,7 @@ export const Primary: Story = {
     decorators: [
         StoreDecorator({
             articleDetails: {
-                data: article
+                data: article,
             },
         }),
     ],
@@ -132,7 +132,7 @@ export const Dark: Story = {
         ThemeDecorator(Theme.DARK),
         StoreDecorator({
             articleDetails: {
-                data: article
+                data: article,
             },
         }),
     ],
@@ -143,7 +143,7 @@ export const Error: Story = {
     decorators: [
         StoreDecorator({
             articleDetails: {
-                error: "error"
+                error: "error",
             },
         }),
     ],
@@ -154,7 +154,7 @@ export const Loading: Story = {
     decorators: [
         StoreDecorator({
             articleDetails: {
-                isLoading: true
+                isLoading: true,
             },
         }),
     ],
@@ -166,7 +166,7 @@ export const ErrorDark: Story = {
         ThemeDecorator(Theme.DARK),
         StoreDecorator({
             articleDetails: {
-                error: "error"
+                error: "error",
             },
         }),
     ],
@@ -178,7 +178,7 @@ export const LoadingDark: Story = {
         ThemeDecorator(Theme.DARK),
         StoreDecorator({
             articleDetails: {
-                isLoading: true
+                isLoading: true,
             },
         }),
     ],

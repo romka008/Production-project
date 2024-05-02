@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes, memo, useRef } from "react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 import styles from "./Input.module.scss";
 

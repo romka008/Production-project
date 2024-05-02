@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { ArticleList } from "./ArticleList";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "app/providers/ThemeProvider";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/app/providers/ThemeProvider";
 import { Article } from "../../model/types/article";
 import { ArticleBlockType } from "../..//model/consts/articleConstst";
 import { ArticleType, ArticleView } from "../../model/consts/articleConstst";

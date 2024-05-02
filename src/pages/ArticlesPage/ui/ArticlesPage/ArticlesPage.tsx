@@ -4,10 +4,10 @@ import { useSearchParams } from "react-router-dom";
 import {
     DynamicModuleLoader,
     ReducerList,
-} from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { useInitialEffect } from "shared/lib/hooks/UseInitialEffect/UseInitialEffect";
-import { Page } from "widgets/Page/Page";
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useInitialEffect } from "@/shared/lib/hooks/UseInitialEffect/UseInitialEffect";
+import { Page } from "@/widgets/Page/Page";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { ArticlePageReducer } from "../../model/slices/articlesPageSlice";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";

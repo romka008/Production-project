@@ -1,13 +1,13 @@
 import "whatwg-fetch";
 import { screen } from "@testing-library/react";
 import { EditableProfileCard } from "./EditableProfileCard";
-import { ComponentRender } from "shared/lib/tests/componentRender/componentRender";
-import { Profile } from "../../../../entities/Profile";
-import { Currency } from "../../../../entities/Currency";
-import { Country } from "../../../../entities/Country";
+import { ComponentRender } from "@/shared/lib/tests/componentRender/componentRender";
+import { Profile } from "@/entities/Profile";
+import { Currency } from "@/entities/Currency";
+import { Country } from "@/entities/Country";
 import { profileReducer } from "../../model/slice/profileSlice";
 import userEvent from "@testing-library/user-event";
-import { $api } from "shared/api/api";
+import { $api } from "@/shared/api/api";
 
 const profile: Profile = {
     id: "1",

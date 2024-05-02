@@ -2,14 +2,14 @@ import { ReactNode, memo, useCallback, useEffect } from "react";
 // import { useSpring, a, config } from "@react-spring/web";
 // import { useDrag } from "@use-gesture/react";
 
-import { classNames } from "shared/lib/classNames/classNames";
-import { useModal } from "shared/lib/hooks/useModal/useModal";
-import { useTheme } from "app/providers/ThemeProvider";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useModal } from "@/shared/lib/hooks/useModal/useModal";
+import { useTheme } from "@/app/providers/ThemeProvider";
 import { Portal } from "../Portal/Portal";
 import { Overlay } from "../Overlay/Overlay";
 
 import styles from "./Drawer.module.scss";
-import { useAnimationLibs } from "shared/lib/components/AnimationProvider";
+import { useAnimationLibs } from "@/shared/lib/components/AnimationProvider";
 
 interface IDrawerProps {
     className?: string;

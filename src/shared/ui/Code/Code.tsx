@@ -1,5 +1,5 @@
-import { classNames } from "shared/lib/classNames/classNames";
-import CopyIcon from "widgets/assets/icons/copy.svg";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import CopyIcon from "@/widgets/assets/icons/copy.svg";
 
 import styles from "./Code.module.scss";
 import { Button, ButtonTheme } from "../Button/Button";

@@ -2,7 +2,7 @@ import "whatwg-fetch";
 import { fireEvent, screen } from "@testing-library/react";
 import { userEvent } from "@storybook/testing-library";
 import { Counter } from "./Counter";
-import { ComponentRender } from "shared/lib/tests/componentRender/componentRender";
+import { ComponentRender } from "@/shared/lib/tests/componentRender/componentRender";
 
 describe("Counter", () => {
     test("test render", () => {

@@ -1,7 +1,7 @@
 import { memo, useCallback } from "react";
 import { Country } from "../../model/type/country";
-import { Select } from "shared/ui/Select/Select";
-import { ListBox } from "shared/ui/Popups/ui/ListBox/ListBox";
+import { Select } from "@/shared/ui/Select/Select";
+import { ListBox } from "@/shared/ui/Popups/ui/ListBox/ListBox";
 import { useTranslation } from "react-i18next";
 
 interface CountryySelectProps {
