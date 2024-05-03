@@ -25,6 +25,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean;
     size?: ButtonSize;
     disabled?: boolean;
+    fullWidth?: boolean;
 }
 
 export const Button = memo(
@@ -35,15 +36,19 @@ export const Button = memo(
         square,
         disabled,
         size = ButtonSize.M,
+        fullWidth,
         ...rest
     }: IButtonProps) => {
+        const mods = {
+            [styles.square]: square,
+            [styles[size]]: true,
+            [styles.disabled]: disabled,
+            [styles.fullWidth]: fullWidth,
+        };
+
         return (
             <button
-                className={classNames(
-                    styles.button,
-                    { [styles.square]: square, [styles[size]]: true, [styles.disabled]: disabled },
-                    [styles[theme], className]
-                )}
+                className={classNames(styles.button, mods, [styles[theme], className])}
                 type="button"
                 disabled={disabled}
                 {...rest}

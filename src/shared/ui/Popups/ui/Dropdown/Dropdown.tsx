@@ -63,7 +63,7 @@ export const Dropdown = ({
                         );
                     }
                     return (
-                        <Menu.Item as={Fragment} key={"123"} disabled={item.disabled}>
+                        <Menu.Item as={Fragment} key={item.key} disabled={item.disabled}>
                             {content}
                         </Menu.Item>
                     );

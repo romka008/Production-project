@@ -4,6 +4,8 @@ import { Input } from "@/shared/ui/Input/Input";
 import { ListBox } from "@/shared/ui/Popups/ui/ListBox/ListBox";
 import { HStack } from "@/shared/ui/Stack";
 import { Page } from "@/widgets/Page/Page";
+import { StarRating } from "@/shared/ui/StarRating/StarRating";
+import { Rating } from "@/entities/RatingCard";
 
 const MainPage = () => {
     const { t } = useTranslation();
@@ -16,6 +18,7 @@ const MainPage = () => {
     return (
         <Page>
             {t("Главная страница")}
+            <StarRating size={30} />
             <div>5asdfasdfasd</div>
             <HStack>
                 <div>5asdfasdfasd</div>
@@ -51,6 +54,7 @@ const MainPage = () => {
             <div>5asdfasdfasd</div>
             <div>5asdfasdfasd</div>
             <Input value={value} onChange={onChange} />
+            <Rating title="Как вам статья?" feedbackTitle="Оставьте отзыв о статье" hasFeedback />
         </Page>
     );
 };
