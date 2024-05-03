@@ -1,9 +1,10 @@
+import { useState } from "react";
+
 import { classNames } from "@/shared/lib/classNames/classNames";
 import IconStar from "@/widgets/assets/icons/star.svg";
 import { Icon } from "../Icon/Icon";
 
 import styles from "./StarRating.module.scss";
-import { useState } from "react";
 
 interface IStarRatingProps {
     className?: string;
@@ -14,9 +15,13 @@ interface IStarRatingProps {
 
 const stars = [1, 2, 3, 4, 5];
 
-export const StarRating = ({ className, onSelect, size, selectedStars }: IStarRatingProps) => {
-    const [isHovered, setIsHovered] = useState(false);
-    const [currentStarsCount, setCurrentStarsCount] = useState(0);
+export const StarRating = ({
+    className,
+    onSelect,
+    size = 30,
+    selectedStars = 0,
+}: IStarRatingProps) => {
+    const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
     const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 
     const onHover = (starsCount: number) => () => {

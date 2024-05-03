@@ -5,7 +5,7 @@ import { ListBox } from "@/shared/ui/Popups/ui/ListBox/ListBox";
 import { HStack } from "@/shared/ui/Stack";
 import { Page } from "@/widgets/Page/Page";
 import { StarRating } from "@/shared/ui/StarRating/StarRating";
-import { Rating } from "@/entities/RatingCard";
+import { Rating } from "@/entities/Rating";
 
 const MainPage = () => {
     const { t } = useTranslation();

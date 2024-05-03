@@ -12,11 +12,19 @@ interface ICardProps extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode;
     className?: string;
     theme?: CardTheme;
+    fullWidth?: boolean;
 }
 
-export const Card = ({ children, className, theme = CardTheme.NORMAL, ...rest }: ICardProps) => {
+export const Card = ({
+    children,
+    className,
+    theme = CardTheme.NORMAL,
+    fullWidth,
+    ...rest
+}: ICardProps) => {
+    const mods = { [styles.fullWidth]: fullWidth };
     return (
-        <div className={classNames(styles.card, {}, [className, styles[theme]])} {...rest}>
+        <div className={classNames(styles.card, mods, [className, styles[theme]])} {...rest}>
             {children}
         </div>
     );

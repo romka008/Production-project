@@ -10,6 +10,7 @@ import {
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 import { VStack } from "@/shared/ui/Stack";
 import { Page } from "@/widgets/Page/Page";
+import { ArticleRating } from "@/features/ArticleRating";
 import { ArticleDetails } from "@/entities/Article";
 import { articleDetailsPageReducer } from "../../model/slices";
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
@@ -39,6 +40,7 @@ const ArticleDetailsPage = () => {
                 <VStack gap="16">
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
+                    <ArticleRating articleId={id} />
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>

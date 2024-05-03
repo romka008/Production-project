@@ -7,7 +7,7 @@ import { Text, TextTheme } from "@/shared/ui/Text/Text";
 import { useInitialEffect } from "@/shared/lib/hooks/UseInitialEffect/UseInitialEffect";
 import { Currency } from "@/entities/Currency";
 import { Country } from "@/entities/Country";
-import { ProfileCard } from "@/entities/Profile/ui/ProfileCard/ProfileCard";
+import { ProfileCard } from "@/entities/Profile";
 import { getProfileFormData } from "../../model/selectors/getProfileFormData/getProfileFormData";
 import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
 import { getProfileError } from "../../model/selectors/getProfileError/getProfileError";
