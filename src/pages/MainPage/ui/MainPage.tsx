@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Input } from "@/shared/ui/Input/Input";
 import { ListBox } from "@/shared/ui/Popups/ui/ListBox/ListBox";
 import { HStack } from "@/shared/ui/Stack";
-import { Page } from "@/widgets/Page/Page";
+import { Page } from "@/widgets/Page";
 import { StarRating } from "@/shared/ui/StarRating/StarRating";
 import { Rating } from "@/entities/Rating";
 

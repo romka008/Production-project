@@ -9,7 +9,7 @@ import { Input } from "@/shared/ui/Input/Input";
 import { SortOrder } from "@/shared/types";
 import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce";
 import { ArticleSortSelector } from "@/features/ArticleSortSelector";
-import { ArticleTypeTabs } from "@/features/ArticleTypeTabs/ui/ArticleTypeTabs";
+import { ArticleTypeTabs } from "@/features/ArticleTypeTabs";
 import {
     getArticlesPageOrder,
     getArticlesPageSearch,

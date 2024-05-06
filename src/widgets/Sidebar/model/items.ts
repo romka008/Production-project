@@ -1,9 +1,9 @@
 import React from "react";
 import { RouterPath } from "@/shared/config/routerConfig/routerConfig";
-import MainIcon from "@/widgets/assets/icons/main-20-20.svg";
-import AboutIcon from "@/widgets/assets/icons/about-20-20.svg";
-import ProfileIcon from "@/widgets/assets/icons/profile-20-20.svg";
-import ArticleIcon from "@/widgets/assets/icons/article-20-20.svg";
+import MainIcon from "../../assets/icons/main-20-20.svg";
+import AboutIcon from "../../assets/icons/about-20-20.svg";
+import ProfileIcon from "../../assets/icons/profile-20-20.svg";
+import ArticleIcon from "../../assets/icons/article-20-20.svg";
 
 export interface SidebarItemType {
     path: string;

@@ -47,6 +47,7 @@ module.exports = {
         "no-undef": "off",
         "no-fallthrough": "off",
         "eslint-check/path-checker": ["error", { alias: "@" }],
+        "eslint-check/public-api-imports": ["error", { alias: "@" }],
     },
     settings: {
         react: {

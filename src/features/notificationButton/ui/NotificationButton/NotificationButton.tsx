@@ -6,7 +6,7 @@ import { Popover } from "@/shared/ui/Popups";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { Icon } from "@/shared/ui/Icon/Icon";
 import { Drawer } from "@/shared/ui/Drawer/Drawer";
-import Notifications from "@/widgets/assets/icons/notifications.svg";
+import { NotificationsIcon } from "@/widgets/assets";
 import { NotificationList } from "@/entities/Notification";
 
 import styles from "./NotificationButton.module.scss";
@@ -29,7 +29,7 @@ export const NotificationButton = memo(({ className }: INotificationButtonProps)
 
     const trigger = (
         <Button theme={ButtonTheme.CLEAR} onClick={onOpenDrawer}>
-            <Icon Svg={Notifications} inverted />
+            <Icon Svg={NotificationsIcon} inverted />
         </Button>
     );
 

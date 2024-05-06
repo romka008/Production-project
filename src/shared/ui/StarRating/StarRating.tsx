@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import IconStar from "@/widgets/assets/icons/star.svg";
+import { IconStar } from "@/widgets/assets";
 import { Icon } from "../Icon/Icon";
 
 import styles from "./StarRating.module.scss";

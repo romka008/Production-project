@@ -12,8 +12,7 @@ import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Icon } from "@/shared/ui/Icon/Icon";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import EyeIcon from "@/widgets/assets/icons/eye-20-20.svg";
-import CalendarIcon from "@/widgets/assets/icons/calendar-20-20.svg";
+import { EyeIcon, CalendarIcon } from "@/widgets/assets";
 
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArticleById";

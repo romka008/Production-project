@@ -9,7 +9,7 @@ import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Button } from "@/shared/ui/Button/Button";
 import { RouterPath } from "@/shared/config/routerConfig/routerConfig";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
-import EyeIcon from "@/widgets/assets/icons/eye-20-20.svg";
+import { EyeIcon } from "@/widgets/assets";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { Article, ArticleTextBlock } from "../../model/types/article";
 import { ArticleBlockType, ArticleView } from "../../model/consts/articleConstst";

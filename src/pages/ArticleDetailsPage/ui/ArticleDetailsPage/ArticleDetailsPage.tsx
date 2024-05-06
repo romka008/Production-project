@@ -9,7 +9,7 @@ import {
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 import { VStack } from "@/shared/ui/Stack";
-import { Page } from "@/widgets/Page/Page";
+import { Page } from "@/widgets/Page";
 import { ArticleRating } from "@/features/ArticleRating";
 import { ArticleDetails } from "@/entities/Article";
 import { articleDetailsPageReducer } from "../../model/slices";
