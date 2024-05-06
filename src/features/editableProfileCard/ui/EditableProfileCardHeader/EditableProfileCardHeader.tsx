@@ -6,10 +6,10 @@ import { HStack } from "@/shared/ui/Stack";
 import { Text } from "@/shared/ui/Text/Text";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { profileActions } from "@/features/editableProfileCard/model/slice/profileSlice";
-import { getProfileReadOnly } from "@/features/editableProfileCard/model/selectors/getProfileReadOnly/getProfileReadOnly";
-import { getProfileFormData } from "@/features/editableProfileCard/model/selectors/getProfileFormData/getProfileFormData";
-import { updateProfileData } from "@/features/editableProfileCard/model/services/updateProfileData/updateProfileData";
+import { profileActions } from "../../model/slice/profileSlice";
+import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";
+import { getProfileFormData } from "../../model/selectors/getProfileFormData/getProfileFormData";
+import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
 import { getUserAuthData } from "@/entities/User";
 
 interface IEditableProfileCardHeaderProps {

@@ -46,7 +46,7 @@ module.exports = {
         "react/display-name": "off",
         "no-undef": "off",
         "no-fallthrough": "off",
-        "eslint-check/path-checker": "error",
+        "eslint-check/path-checker": ["error", { alias: "@" }],
     },
     settings: {
         react: {

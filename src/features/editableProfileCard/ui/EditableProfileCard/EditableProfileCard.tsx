@@ -5,6 +5,10 @@ import { useTranslation } from "react-i18next";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { Text, TextTheme } from "@/shared/ui/Text/Text";
 import { useInitialEffect } from "@/shared/lib/hooks/UseInitialEffect/UseInitialEffect";
+import {
+    DynamicModuleLoader,
+    ReducerList,
+} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { Currency } from "@/entities/Currency";
 import { Country } from "@/entities/Country";
 import { ProfileCard } from "@/entities/Profile";
@@ -15,12 +19,8 @@ import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/get
 import { getProfileValidateErrors } from "../../model/selectors/getProfileValidateErrors/getProfileValidateErrors";
 import { fetchProfileData } from "../../model/services/fetchProfileData/fetchProfileData";
 import { profileActions, profileReducer } from "../../model/slice/profileSlice";
-import { ValidateProfileError } from "@/features/editableProfileCard/model/consts/consts";
+import { ValidateProfileError } from "../../model/consts/consts";
 
-import {
-    DynamicModuleLoader,
-    ReducerList,
-} from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { EditableProfileCardHeader } from "../EditableProfileCardHeader/EditableProfileCardHeader";
 
 interface IEditableProfileCardProps {
