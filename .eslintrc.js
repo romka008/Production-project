@@ -32,7 +32,7 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: ["@typescript-eslint", "react", "react-hooks", "eslint-check"],
+    plugins: ["@typescript-eslint", "react", "react-hooks", "eslint-check", "ulbi-tv-plugin"],
     rules: {
         indent: [2, 4],
         linebreakStyle: 0,
@@ -48,6 +48,13 @@ module.exports = {
         "no-fallthrough": "off",
         "eslint-check/path-checker": ["error", { alias: "@" }],
         // "eslint-check/public-api-imports": ["error", { alias: "@" }],
+        "ulbi-tv-plugin/public-api-imports": [
+            "error",
+            {
+                alias: "@",
+                testFilesPatterns: ["**/*.test.ts", "**/*.test.ts", "**/StoreDecorator.tsx"],
+            },
+        ],
     },
     settings: {
         react: {
