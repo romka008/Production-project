@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { RouterPath } from "@/shared/config/routerConfig/routerConfig";
+import { RouterPath } from "@/shared/const/router";
 import MainIcon from "../../../../widgets/assets/icons/main-20-20.svg";
 import AboutIcon from "../../../../widgets/assets/icons/about-20-20.svg";
 import ProfileIcon from "../../../../widgets/assets/icons/profile-20-20.svg";

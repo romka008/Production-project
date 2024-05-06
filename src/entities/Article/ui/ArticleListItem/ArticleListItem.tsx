@@ -7,7 +7,7 @@ import { Icon } from "@/shared/ui/Icon/Icon";
 import { Card } from "@/shared/ui/Card/Card";
 import { Avatar } from "@/shared/ui/Avatar/Avatar";
 import { Button } from "@/shared/ui/Button/Button";
-import { RouterPath } from "@/shared/config/routerConfig/routerConfig";
+import { RouterPath } from "@/shared/const/router";
 import { AppLink } from "@/shared/ui/AppLink/AppLink";
 import { EyeIcon } from "@/widgets/assets";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
