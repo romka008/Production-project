@@ -7,7 +7,7 @@ import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 
 import styles from "./ArticleList.module.scss";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSceleton";
-import { Text } from "@/shared/ui/Text/Text";
+import { Text } from "@/shared/ui/Text";
 import { useTranslation } from "react-i18next";
 
 interface IArticleListProps {

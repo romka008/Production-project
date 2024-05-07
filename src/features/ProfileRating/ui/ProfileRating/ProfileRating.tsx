@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import { Rating } from "@/entities/Rating";
 import { getUserAuthData } from "@/entities/User";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { Skeleton } from "@/shared/ui/Skeleton";
 import { useGetProfileRatingQuery, useRateProfileMutation } from "../../api/profileRatingApi";
 
 export interface IProfileRatingProps {

@@ -5,7 +5,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 
 import styles from "./AvatarDropdown.module.scss";
 import { Dropdown } from "@/shared/ui/Popups";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Avatar } from "@/shared/ui/Avatar";
 import { RouterPath } from "@/shared/const/router";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";

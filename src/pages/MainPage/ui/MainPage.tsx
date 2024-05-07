@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Input } from "@/shared/ui/Input/Input";
-import { ListBox } from "@/shared/ui/Popups/ui/ListBox/ListBox";
+import { Input } from "@/shared/ui/Input";
+import { ListBox } from "@/shared/ui/Popups";
 import { HStack } from "@/shared/ui/Stack";
 import { Page } from "@/widgets/Page";
-import { StarRating } from "@/shared/ui/StarRating/StarRating";
+import { StarRating } from "@/shared/ui/StarRating";
 import { Rating } from "@/entities/Rating";
 
 const MainPage = () => {
