@@ -7,6 +7,7 @@
     "start": "webpack serve --env port=8080",
     "start:vite": "vite",
     "start:dev": "concurrently \"npm start\" \"npm start:server\"",
+    "start:dev:vite": "concurrently \"npm run start:vite\" \"npm run start:server\"",
     "start:server": "node ./json-server/index.js",
     "build:prod": "webpack --env mode=production apiUrl=https://production-project-server-bd5ras4jc-romka008s-projects.vercel.app/",
     "build:dev": "webpack --env mode=development",
