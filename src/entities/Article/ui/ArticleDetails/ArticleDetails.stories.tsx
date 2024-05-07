@@ -5,7 +5,7 @@ import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDe
 import { Article } from "../../model/types/article";
 import { ArticleBlockType, ArticleType } from "../../model/consts/articleConstst";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "@/app/providers/ThemeProvider";
+import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof ArticleDetails> = {
     title: "entities/Article/ArticleDetails",

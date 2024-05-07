@@ -1,7 +1,10 @@
 import { useContext } from "react";
-import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from "./ThemeContext";
 
-interface IUseThemeResult {
+import { ThemeContext } from "../../context/ThemeContext";
+import { LOCAL_STORAGE_THEME_KEY } from "../../../const/localstorage";
+import { Theme } from "../../../const/theme";
+
+export interface IUseThemeResult {
     toogleTheme: () => void;
     theme: Theme;
 }

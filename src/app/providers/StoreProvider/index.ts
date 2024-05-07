@@ -6,5 +6,6 @@ export type {
     AppDispatch,
     ReduxStoreWithManager,
     ThunkExtraArg,
+    StateSchemaKey,
 } from "./config/StateSchema";
 export type {} from "./config/StateSchema";

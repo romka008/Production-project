@@ -6,7 +6,7 @@ import { Popover } from "@/shared/ui/Popups";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { Icon } from "@/shared/ui/Icon/Icon";
 import { Drawer } from "@/shared/ui/Drawer/Drawer";
-import { NotificationsIcon } from "@/widgets/assets";
+import { NotificationsIcon } from "@/shared/assets";
 import { NotificationList } from "@/entities/Notification";
 
 import styles from "./NotificationButton.module.scss";

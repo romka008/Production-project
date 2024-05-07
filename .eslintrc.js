@@ -55,6 +55,13 @@ module.exports = {
                 testFilesPatterns: ["**/*.test.ts", "**/*.test.ts", "**/StoreDecorator.tsx"],
             },
         ],
+        "ulbi-tv-plugin/layer-imports": [
+            "error",
+            {
+                alias: "@",
+                ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+            },
+        ],
     },
     settings: {
         react: {

@@ -1,9 +1,9 @@
+import { useCallback } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { CopyIcon } from "@/widgets/assets";
+import { CopyIcon } from "@/shared/assets";
 
 import styles from "./Code.module.scss";
 import { Button, ButtonTheme } from "../Button/Button";
-import { useCallback } from "react";
 
 interface ICodeProps {
     text: string;

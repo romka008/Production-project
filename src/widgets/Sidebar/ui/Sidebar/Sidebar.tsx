@@ -3,14 +3,14 @@ import { useSelector } from "react-redux";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/Button/Button";
-import { ThemeSwitcher } from "@/widgets/ThemeSwitcher";
-import { LangSwitcher } from "@/widgets/LangSwitcher";
+import { VStack } from "@/shared/ui/Stack/Vstack/VStack";
+import { ThemeSwitcher } from "@/features/ThemeSwitcher";
+import { LangSwitcher } from "@/features/LangSwitcher";
 
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
 
 import styles from "./Sidebar.module.scss";
-import { VStack } from "@/shared/ui/Stack/Vstack/VStack";
 
 interface ISidebarProps {
     className?: string;
