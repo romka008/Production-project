@@ -32,12 +32,20 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: ["@typescript-eslint", "react", "react-hooks", "eslint-check", "ulbi-tv-plugin"],
+    plugins: [
+        "@typescript-eslint",
+        "react",
+        "react-hooks",
+        "eslint-check",
+        "ulbi-tv-plugin",
+        "unused-imports",
+    ],
     rules: {
         indent: [2, 4],
         linebreakStyle: 0,
         quotes: ["error", "double", { allowTemplateLiterals: true }],
         semi: ["error", "always"],
+        "unused-imports/no-unused-imports": "error",
         "react/jsx-sort-props": ["warn", { ignoreCase: true, noSortAlphabetically: true }],
         "@typescript-eslint/no-unused-vars": 0,
         "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks

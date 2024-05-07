@@ -10,7 +10,6 @@ import { NotificationsIcon } from "@/shared/assets";
 import { NotificationList } from "@/entities/Notification";
 
 import styles from "./NotificationButton.module.scss";
-import { AnimationProvider } from "@/shared/lib/components/AnimationProvider";
 
 interface INotificationButtonProps {
     className?: string;
