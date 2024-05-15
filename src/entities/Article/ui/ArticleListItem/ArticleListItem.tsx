@@ -7,7 +7,7 @@ import { Icon } from "@/shared/ui/Icon";
 import { Card } from "@/shared/ui/Card";
 import { Avatar } from "@/shared/ui/Avatar";
 import { Button } from "@/shared/ui/Button";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteArticlesDetails } from "@/shared/const/router";
 import { AppLink } from "@/shared/ui/AppLink";
 import { EyeIcon } from "@/shared/assets";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
@@ -63,7 +63,7 @@ export const ArticleListItem = memo(
                             />
                         )}
                         <div className={styles.footer}>
-                            <AppLink to={`${RouterPath.articles}/${article.id}`}>
+                            <AppLink to={getRouteArticlesDetails(article.id)}>
                                 <Button>{t("Читать далее...")}</Button>
                             </AppLink>
                             {views}
@@ -76,7 +76,7 @@ export const ArticleListItem = memo(
         return (
             <AppLink
                 target={target}
-                to={`${RouterPath.articles}/${article.id}`}
+                to={getRouteArticlesDetails(article.id)}
                 className={classNames(styles.articleTextBlockComponent, {}, [
                     className,
                     styles.PLATE,

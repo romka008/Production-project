@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { RouterPath } from "@/shared/const/router";
+import { getRouteForbidden, getRouteMain } from "@/shared/const/router";
 import { UserRole, getUserAuthData, getUserRoles } from "@/entities/User";
 
 interface IRequireAuthProps {
@@ -27,11 +27,11 @@ export const RequireAuth = ({ children, roles }: IRequireAuthProps) => {
 
     if (!auth) {
         console.log("REDIRECT ON LOGIN");
-        return <Navigate to={RouterPath.main} state={{ from: location }} replace />;
+        return <Navigate to={getRouteMain()} state={{ from: location }} replace />;
     }
 
     if (!hasRequiredRoles) {
-        return <Navigate to={RouterPath.forbidden} state={{ from: location }} replace />;
+        return <Navigate to={getRouteForbidden()} state={{ from: location }} replace />;
     }
 
     return children;

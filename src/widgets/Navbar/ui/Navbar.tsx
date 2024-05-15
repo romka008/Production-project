@@ -6,7 +6,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { Text, TextTheme } from "@/shared/ui/Text";
 import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteArticleCreate } from "@/shared/const/router";
 import { HStack } from "@/shared/ui/Stack";
 import { LoginModal } from "@/features/AuthByUsername";
 import { NotificationButton } from "@/features/notificationButton";
@@ -31,7 +31,7 @@ export const Navbar = memo(() => {
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
                     className={styles.createLink}
-                    to={RouterPath.article_create}
+                    to={getRouteArticleCreate()}
                 >
                     {t("Создать статью")}
                 </AppLink>

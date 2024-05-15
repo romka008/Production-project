@@ -6,7 +6,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./AvatarDropdown.module.scss";
 import { Dropdown } from "@/shared/ui/Popups";
 import { Avatar } from "@/shared/ui/Avatar";
-import { RouterPath } from "@/shared/const/router";
+import { getRouteAdminPanel, getRouteProfile } from "@/shared/const/router";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from "@/entities/User";
@@ -41,14 +41,14 @@ export const AvatarDropdown = memo(({ className }: IAvatarDropdownProps) => {
                     ? [
                         {
                             content: t("Админка"),
-                            href: RouterPath.admin_panel,
+                            href: getRouteAdminPanel(),
                             key: "1",
                         },
                     ]
                     : []),
                 {
                     content: t("Профиль"),
-                    href: RouterPath.profile + authData.id,
+                    href: getRouteProfile(authData.id),
                     key: "2",
                 },
                 {

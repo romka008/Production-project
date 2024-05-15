@@ -1,7 +1,19 @@
 import { AppRouteProps } from "@/shared/types/router";
 
 import { UserRole } from "@/entities/User";
-import { AppRoutes, RouterPath } from "@/shared/const/router";
+import {
+    AppRoutes,
+    getRouteAbout,
+    getRouteAdminPanel,
+    getRouteArticleCreate,
+    getRouteArticleEdit,
+    getRouteArticles,
+    getRouteArticlesDetails,
+    getRouteForbidden,
+    getRouteMain,
+    getRouteNotFound,
+    getRouteProfile,
+} from "@/shared/const/router";
 import { AdminPanelPage } from "@/pages/AdminPanelPage";
 import { ForbiddenPage } from "@/pages/ForbiddenPage";
 import { NotFoundPage } from "@/pages/NotFoudPage";
@@ -14,55 +26,55 @@ import { ArticleEditPage } from "@/pages/ArticleEditPage";
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.MAIN]: {
-        path: RouterPath.main,
+        path: getRouteMain(),
         element: <MainPage />,
     },
     [AppRoutes.PROFILE]: {
-        path: `${RouterPath.profile}:id`,
+        path: getRouteProfile(":id"),
         element: <ProfilePage />,
         authOnly: true,
         roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.USER],
     },
     [AppRoutes.ABOUT]: {
-        path: RouterPath.about,
+        path: getRouteAbout(),
         element: <AboutPage />,
     },
     [AppRoutes.ARTICLES]: {
-        path: RouterPath.articles,
+        path: getRouteArticles(),
         element: <ArticlesPage />,
         authOnly: true,
         roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.USER],
     },
     [AppRoutes.ARTICLE_DETAILS]: {
-        path: `${RouterPath.article_details}:id`,
+        path: getRouteArticlesDetails(":id"),
         element: <ArticleDetailsPage />,
         authOnly: true,
         roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.USER],
     },
     [AppRoutes.ARTICLE_CREATE]: {
-        path: `${RouterPath.article_create}`,
+        path: getRouteArticleCreate(),
         element: <ArticleEditPage />,
         authOnly: true,
         roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.USER],
     },
     [AppRoutes.ARTICLE_EDIT]: {
-        path: `${RouterPath.article_edit}`,
+        path: getRouteArticleEdit(":id"),
         element: <ArticleEditPage />,
         authOnly: true,
         roles: [UserRole.ADMIN, UserRole.MANAGER, UserRole.USER],
     },
     [AppRoutes.ADMIN_PANEL]: {
-        path: `${RouterPath.admin_panel}`,
+        path: getRouteAdminPanel(),
         element: <AdminPanelPage />,
         authOnly: true,
         roles: [UserRole.ADMIN, UserRole.MANAGER],
     },
     [AppRoutes.NOT_FOUND]: {
-        path: RouterPath.not_found,
+        path: getRouteNotFound(),
         element: <NotFoundPage />,
     },
     [AppRoutes.FORBIDDEN]: {
-        path: RouterPath.forbidden,
+        path: getRouteForbidden(),
         element: <ForbiddenPage />,
     },
 };
