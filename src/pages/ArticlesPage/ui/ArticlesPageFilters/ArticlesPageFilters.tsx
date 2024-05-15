@@ -10,6 +10,7 @@ import { SortOrder } from "@/shared/types";
 import { useDebounce } from "@/shared/lib/hooks/useDebounce/useDebounce";
 import { ArticleSortSelector } from "@/features/ArticleSortSelector";
 import { ArticleTypeTabs } from "@/features/ArticleTypeTabs";
+import { ArticleListViewSelector } from "@/features/ArticleListViewSelector";
 import {
     getArticlesPageOrder,
     getArticlesPageSearch,
@@ -18,12 +19,7 @@ import {
     getArticlesPageView,
 } from "../../model/selectors/articles";
 import { articlePageActions } from "../../model/slices/articlesPageSlice";
-import {
-    ArticleListViewSelector,
-    ArticleSortField,
-    ArticleView,
-    ArticleType,
-} from "@/entities/Article";
+import { ArticleSortField, ArticleView, ArticleType } from "@/entities/Article";
 import { fetchArticlesList } from "../../model/services/fetchArticlesList/fetchArticlesList";
 
 import styles from "./ArticlesPageFilters.module.scss";

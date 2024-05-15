@@ -4,7 +4,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { Icon } from "@/shared/ui/Icon";
 import { ListIcon, TiledIcon } from "@/shared/assets";
-import { ArticleView } from "../../model/consts/articleConstst";
+import { ArticleView } from "@/entities/Article";
 
 import styles from "./ArticleListViewSelector.module.scss";
 

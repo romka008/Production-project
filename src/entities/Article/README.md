@@ -6,15 +6,17 @@
 
 -   Components
 
+`ArticleCodeBlockComponent` - компонент с отображением кода для статьи
+
 `ArticleDetails` - компонент с информацией о статье
+
+`ArticleImageBlockComponent` - компонент с отображением изображения в статье
 
 `ArticleList` - Компонент со списком статей
 
-`ArticleViewSelector` - Компонент переключатель отображения списка статьей (плитка, список)
+`ArticleListItem` - Компонент с одной статьей (плитка/список)
 
-`ArticleSortSelector` - Компонент с выбором сортировки списка статьей
-
-`ArticleTypeTabs` - Компонент с выбором типа статьи
+`ArticleTextBlockComponent` - Компонент с отображением текста для статьи
 
 -   types
 

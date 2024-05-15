@@ -8,7 +8,6 @@ export {
 
 export { ArticleDetails } from "./ui/ArticleDetails/ArticleDetails";
 export { ArticleList } from "./ui/ArticleList/ArticleList";
-export { ArticleListViewSelector } from "./ui/ArticleListViewSelector/ArticleListViewSelector";
 
 export type { Article } from "./model/types/article";
 export type { ArticleDetailsSchema } from "./model/types/articleDetailsSchema";
