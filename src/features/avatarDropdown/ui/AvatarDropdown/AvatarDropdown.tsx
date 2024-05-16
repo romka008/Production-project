@@ -35,7 +35,7 @@ export const AvatarDropdown = memo(({ className }: IAvatarDropdownProps) => {
     return (
         <Dropdown
             className={classNames(styles.AvatarDropdown, {}, [className])}
-            trigger={<Avatar size={30} src={authData.avatar} />}
+            trigger={<Avatar fallbackInverted size={30} src={authData.avatar} />}
             items={[
                 ...(isAdminPanelAvailable
                     ? [
