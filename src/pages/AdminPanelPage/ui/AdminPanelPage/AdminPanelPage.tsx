@@ -13,5 +13,12 @@ interface IAdminPanelPageProps {
 export const AdminPanelPage = memo(({ className }: IAdminPanelPageProps) => {
     const { t } = useTranslation();
 
-    return <Page className={classNames(styles.AdminPanelPage, {}, [className])}>Админка</Page>;
+    return (
+        <Page
+            data-testid="AdminPanelPage"
+            className={classNames(styles.AdminPanelPage, {}, [className])}
+        >
+            Админка
+        </Page>
+    );
 });

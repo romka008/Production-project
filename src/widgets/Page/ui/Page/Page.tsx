@@ -7,18 +7,20 @@ import { useInfiniteScroll } from "@/shared/lib/hooks/useInfiniteScroll/useInfin
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "@/shared/lib/hooks/UseInitialEffect/UseInitialEffect";
 import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
+import { ITestProps } from "@/shared/types/tests";
 import { getScrollSaveByPath, scrollSaveActions } from "@/features/ScrollSave";
 import { StateSchema } from "@/app/providers/StoreProvider";
 
 import styles from "./Page.module.scss";
 
-interface IPageProps {
+interface IPageProps extends ITestProps {
     className?: string;
     children: ReactNode;
     onScrollEnd?: () => void;
 }
 
-export const Page = ({ className, children, onScrollEnd }: IPageProps) => {
+export const Page = (props: IPageProps) => {
+    const { className, children, onScrollEnd } = props;
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
@@ -47,6 +49,7 @@ export const Page = ({ className, children, onScrollEnd }: IPageProps) => {
             ref={wrapperRef}
             className={classNames(styles.page, {}, [className])}
             onScroll={onScroll}
+            data-testid={props["data-testid"] ?? "Page"}
         >
             {children}
             {onScrollEnd ? <div className={styles.trigger} ref={triggerRef} /> : null}

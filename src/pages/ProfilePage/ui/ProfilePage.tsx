@@ -19,7 +19,7 @@ const ProfilePage = ({ className }: IProfilePageProps) => {
         return <Text text={t("Профиль не найден")} />;
     }
     return (
-        <Page>
+        <Page data-testid="ProfilePage">
             <VStack max gap="16">
                 <EditableProfileCard id={id} />
                 <ProfileRating profileId={id} />
