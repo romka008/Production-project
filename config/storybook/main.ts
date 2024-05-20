@@ -6,16 +6,18 @@ const config: StorybookConfig = {
         "@storybook/addon-links",
         "@storybook/addon-essentials",
         {
-            name: "@storybook/addon-styling",
+            name: "@storybook/addon-styling-webpack",
         },
         "@storybook/addon-interactions",
+        "@storybook/addon-webpack5-compiler-babel",
     ],
     framework: {
         name: "@storybook/react-webpack5",
         options: {},
     },
-    docs: {
-        autodocs: "tag",
+    docs: {},
+    typescript: {
+        reactDocgen: "react-docgen-typescript",
     },
 };
 export default config;

@@ -29,9 +29,9 @@ export const Primary: Story = {
     args: {
         trigger: <Button>Открыть</Button>,
         items: [
-            { content: "Первый пункт меню" },
-            { content: "Второй пункт меню" },
-            { content: "Третий пункт меню" },
+            { content: "Первый пункт меню", key: "1" },
+            { content: "Второй пункт меню", key: "2" },
+            { content: "Третий пункт меню", key: "3" },
         ],
     },
 };
@@ -40,9 +40,9 @@ export const Dark: Story = {
     args: {
         trigger: <Button>Открыть</Button>,
         items: [
-            { content: "Первый пункт меню" },
-            { content: "Второй пункт меню" },
-            { content: "Третий пункт меню" },
+            { content: "Первый пункт меню", key: "1" },
+            { content: "Второй пункт меню", key: "2" },
+            { content: "Третий пункт меню", key: "3" },
         ],
     },
     decorators: [ThemeDecorator(Theme.DARK)],
