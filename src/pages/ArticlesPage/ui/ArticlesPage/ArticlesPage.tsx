@@ -34,7 +34,7 @@ const ArticlesPage = () => {
 
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={false}>
-            <Page onScrollEnd={onLoadNextPart}>
+            <Page onScrollEnd={onLoadNextPart} data-testid="ArticlesPage">
                 <ArticlesPageFilters />
                 <ArticleInfiniteList className={styles.list} />
 
