@@ -856,6 +856,15 @@
         "MANAGER"
       ],
       "avatar": "https://peopletalk.ru/wp-content/uploads/2019/06/b69x9359-683x1024.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ],
+      "avatar": "https://s0.rbk.ru/v6_top_pics/resized/600xH/media/img/9/23/346989938408239.webp"
     }
   ],
   "profile": [
@@ -891,6 +900,17 @@
       "city": "Москва",
       "username": "Kate",
       "avatar": "https://peopletalk.ru/wp-content/uploads/2019/06/b69x9359-683x1024.jpg"
+    },
+    {
+      "id": "4",
+      "first": "test",
+      "lastname": "test",
+      "age": 25,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Москва",
+      "username": "Salma",
+      "avatar": "https://s0.rbk.ru/v6_top_pics/resized/600xH/media/img/9/23/346989938408239.webp"
     }
   ],
   "article-ratings": [

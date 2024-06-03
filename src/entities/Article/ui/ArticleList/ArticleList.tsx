@@ -57,7 +57,10 @@ export const ArticleList = memo(
             );
         }
         return (
-            <div className={classNames(styles.articleList, {}, [className, styles[view]])}>
+            <div
+                className={classNames(styles.articleList, {}, [className, styles[view]])}
+                data-testid="ArticleList"
+            >
                 {articles?.length > 0 ? articles.map(renderArticle) : null}
                 {isLoading && getSkeletons(view)}
             </div>

@@ -48,6 +48,7 @@ export const ArticleListItem = memo(
                         className,
                         styles[view],
                     ])}
+                    data-testid="ArticleListItem"
                 >
                     <Card className={styles.card}>
                         <div className={styles.header}>
@@ -88,6 +89,7 @@ export const ArticleListItem = memo(
                     className,
                     styles.PLATE,
                 ])}
+                data-testid="ArticleListItem"
             >
                 <Card className={styles.card}>
                     <div className={styles.imageWrapper}>

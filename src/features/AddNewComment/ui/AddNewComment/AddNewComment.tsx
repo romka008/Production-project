@@ -51,16 +51,24 @@ const AddNewComment = ({ className, onSendComment }: IAddNewCommentProps) => {
 
     return (
         <DynamicModuleLoader reducers={initialReducers}>
-            <HStack max gap="8" className={classNames(styles.addNewComment, {}, [className])}>
+            <HStack
+                data-testid="AddNewComment"
+                max
+                gap="8"
+                className={classNames(styles.addNewComment, {}, [className])}
+            >
                 {error && <Text text={t("Произошла ошибка")} theme={TextTheme.ERROR} />}
                 <Input
+                    data-testid="AddNewComment.Input"
                     placeholder={t("Введите текст комментария")}
                     type="text"
                     className={styles.input}
                     onChange={onChangeCommentText}
                     value={text ?? ""}
                 />
-                <Button onClick={onSendHandler}>{t("Отправить")}</Button>
+                <Button data-testid="AddNewComment.Button" onClick={onSendHandler}>
+                    {t("Отправить")}
+                </Button>
             </HStack>
         </DynamicModuleLoader>
     );
