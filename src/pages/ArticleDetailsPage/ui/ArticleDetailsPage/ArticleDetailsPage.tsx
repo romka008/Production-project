@@ -9,6 +9,7 @@ import {
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 import { VStack } from "@/shared/ui/Stack";
+import { getFeatureFlag } from "@/shared/lib/features";
 import { Page } from "@/widgets/Page";
 import { ArticleRating } from "@/features/ArticleRating";
 import { ArticleDetails } from "@/entities/Article";
@@ -25,6 +26,7 @@ const initialReducers: ReducerList = {
 const ArticleDetailsPage = () => {
     const { t } = useTranslation("article");
     const { id } = useParams<{ id: string }>();
+    const isArticleRatingEnabled = getFeatureFlag("isArticleRatingEnabled");
 
     if (!id) {
         return (
@@ -40,7 +42,7 @@ const ArticleDetailsPage = () => {
                 <VStack gap="16">
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    <ArticleRating articleId={id} />
+                    {isArticleRatingEnabled && <ArticleRating articleId={id} />}
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>
