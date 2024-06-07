@@ -5,7 +5,7 @@ import { LOCAL_STORAGE_THEME_KEY } from "../../../const/localstorage";
 import { Theme } from "../../../const/theme";
 
 export interface IUseThemeResult {
-    toogleTheme: () => void;
+    toogleTheme: (saveAction: (theme: Theme) => void) => void;
     theme: Theme;
 }
 
@@ -13,7 +13,7 @@ export const useTheme = (): IUseThemeResult => {
     const { theme, setTheme } = useContext(ThemeContext);
     document.body.className = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) || Theme.LIGHT;
 
-    const toogleTheme = () => {
+    const toogleTheme = (saveAction: (theme: Theme) => void) => {
         // const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
         let newTheme: Theme;
 
@@ -34,7 +34,9 @@ export const useTheme = (): IUseThemeResult => {
         setTheme?.(newTheme);
 
         document.body.className = newTheme;
-        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+
+        saveAction?.(newTheme);
+        // localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
 
     return { theme: theme || Theme.LIGHT, toogleTheme };
