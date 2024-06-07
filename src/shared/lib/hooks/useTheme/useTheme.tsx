@@ -11,6 +11,7 @@ export interface IUseThemeResult {
 
 export const useTheme = (): IUseThemeResult => {
     const { theme, setTheme } = useContext(ThemeContext);
+    // TODO
     document.body.className = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) || Theme.LIGHT;
 
     const toogleTheme = (saveAction: (theme: Theme) => void) => {

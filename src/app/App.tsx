@@ -4,9 +4,10 @@ import { useSelector } from "react-redux";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
+import { Loader } from "@/shared/ui/Loader";
 import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
-import { getUserInited, userActions } from "@/entities/User";
+import { getUserInited, initAuthData } from "@/entities/User";
 
 import { AppRouter } from "./providers/router";
 
@@ -16,8 +17,12 @@ export const App = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(userActions.initAuthData());
+        dispatch(initAuthData());
     }, [dispatch]);
+
+    if (!inited) {
+        return <Loader />;
+    }
 
     return (
         <div className={classNames("app", { selected: true }, [theme])}>
