@@ -8,6 +8,7 @@ import {
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "@/shared/lib/hooks/UseInitialEffect/UseInitialEffect";
 import { Page } from "@/widgets/Page";
+import { ArticlePageGreeting } from "@/features/articlePageGreeting";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { ArticlePageReducer } from "../../model/slices/articlesPageSlice";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
@@ -37,7 +38,7 @@ const ArticlesPage = () => {
             <Page onScrollEnd={onLoadNextPart} data-testid="ArticlesPage">
                 <ArticlesPageFilters />
                 <ArticleInfiniteList className={styles.list} />
-
+                <ArticlePageGreeting />
                 {/* <ArticleList articles={[article]} /> */}
             </Page>
         </DynamicModuleLoader>

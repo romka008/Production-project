@@ -844,7 +844,7 @@
       "jsonSettings": {
         "theme": "app_dark_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "isArticlePageWasOpened": true
       },
       "avatar": "https://e7.pngegg.com/pngimages/109/949/png-clipart-computer-software-management-business-service-technical-support-sugarplum-miscellaneous-infographic.png"
     },
@@ -862,7 +862,7 @@
       "jsonSettings": {
         "theme": "app_dark_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "isArticlePageWasOpened": true
       },
       "avatar": "https://kartinki.pibig.info/uploads/posts/2023-04/1682095256_kartinki-pibig-info-p-kartinka-neizvestnogo-cheloveka-arti-vkont-59.png"
     },
@@ -880,7 +880,7 @@
       "jsonSettings": {
         "theme": "app_blue_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpen": false
+        "isArticlePageWasOpened": true
       },
       "avatar": "https://peopletalk.ru/wp-content/uploads/2019/06/b69x9359-683x1024.jpg"
     },
