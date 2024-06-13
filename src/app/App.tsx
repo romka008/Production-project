@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
-import { Loader } from "@/shared/ui/Loader";
+import { Loader } from "@/shared/ui/deprecated/Loader";
 import { Navbar } from "@/widgets/Navbar";
 import { Sidebar } from "@/widgets/Sidebar";
 import { getUserInited, initAuthData } from "@/entities/User";

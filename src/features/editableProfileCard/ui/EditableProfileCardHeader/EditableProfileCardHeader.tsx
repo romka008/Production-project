@@ -2,9 +2,9 @@ import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-import { HStack } from "@/shared/ui/Stack";
-import { Text } from "@/shared/ui/Text";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
+import { HStack } from "@/shared/ui/deprecated/Stack";
+import { Text } from "@/shared/ui/deprecated/Text";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { profileActions } from "../../model/slice/profileSlice";
 import { getProfileReadOnly } from "../../model/selectors/getProfileReadOnly/getProfileReadOnly";

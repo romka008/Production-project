@@ -2,7 +2,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTranslation } from "react-i18next";
 
 import styles from "./PageError.module.scss";
-import { Button } from "@/shared/ui/Button";
+import { Button } from "@/shared/ui/deprecated/Button";
 
 interface IPageErrorProps {
     className?: string;

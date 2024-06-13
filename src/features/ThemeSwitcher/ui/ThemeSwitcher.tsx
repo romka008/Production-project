@@ -2,9 +2,9 @@ import { memo, useCallback } from "react";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { LightIcon } from "@/shared/assets";
-import { Button, ButtonTheme } from "@/shared/ui/Button";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Icon } from "@/shared/ui/Icon";
+import { Icon } from "@/shared/ui/deprecated/Icon";
 import { saveJsonSettings } from "@/entities/User";
 
 import styles from "./ThemeSwitcher.module.scss";

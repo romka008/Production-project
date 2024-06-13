@@ -7,10 +7,10 @@ import {
     ReducerList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Text, TextAlign, TextSize } from "@/shared/ui/Text";
-import { Skeleton } from "@/shared/ui/Skeleton";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Icon } from "@/shared/ui/Icon";
+import { Text, TextAlign, TextSize } from "@/shared/ui/deprecated/Text";
+import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
+import { Avatar } from "@/shared/ui/deprecated/Avatar";
+import { Icon } from "@/shared/ui/deprecated/Icon";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { EyeIcon, CalendarIcon } from "@/shared/assets";
 
@@ -28,7 +28,7 @@ import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleC
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 
 import styles from "./ArticleDetails.module.scss";
-import { HStack, VStack } from "@/shared/ui/Stack";
+import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
 
 interface IArticleDetailsProps {
     id: string;
@@ -48,33 +48,33 @@ export const ArticleDetails = memo(({ className, id }: IArticleDetailsProps) => 
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
-        case ArticleBlockType.TEXT:
-            return (
-                <ArticleTextBlockComponent
-                    className={styles.block}
-                    block={block}
-                    key={block.id}
-                />
-            );
-        case ArticleBlockType.CODE:
-            return (
-                <ArticleCodeBlockComponent
-                    className={styles.block}
-                    block={block}
-                    key={block.id}
-                />
-            );
-        case ArticleBlockType.IMAGE:
-            return (
-                <ArticleImageBlockComponent
-                    className={styles.block}
-                    block={block}
-                    key={block.id}
-                />
-            );
+            case ArticleBlockType.TEXT:
+                return (
+                    <ArticleTextBlockComponent
+                        className={styles.block}
+                        block={block}
+                        key={block.id}
+                    />
+                );
+            case ArticleBlockType.CODE:
+                return (
+                    <ArticleCodeBlockComponent
+                        className={styles.block}
+                        block={block}
+                        key={block.id}
+                    />
+                );
+            case ArticleBlockType.IMAGE:
+                return (
+                    <ArticleImageBlockComponent
+                        className={styles.block}
+                        block={block}
+                        key={block.id}
+                    />
+                );
 
-        default:
-            return null;
+            default:
+                return null;
         }
     }, []);
 

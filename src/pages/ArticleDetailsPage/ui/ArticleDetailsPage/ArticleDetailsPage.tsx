@@ -8,9 +8,9 @@ import {
     ReducerList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
-import { VStack } from "@/shared/ui/Stack";
+import { VStack } from "@/shared/ui/deprecated/Stack";
 import { ToggleFeatures } from "@/shared/lib/features";
-import { Card } from "@/shared/ui/Card";
+import { Card } from "@/shared/ui/deprecated/Card";
 import { Page } from "@/widgets/Page";
 import { ArticleRating } from "@/features/ArticleRating";
 import { ArticleDetails } from "@/entities/Article";

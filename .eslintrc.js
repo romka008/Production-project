@@ -41,7 +41,6 @@ module.exports = {
         "unused-imports",
     ],
     rules: {
-        indent: [2, 4],
         linebreakStyle: 0,
         quotes: ["error", "double", { allowTemplateLiterals: true }],
         semi: ["error", "always"],

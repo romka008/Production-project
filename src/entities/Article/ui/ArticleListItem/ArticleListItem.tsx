@@ -1,22 +1,22 @@
 import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Text } from "@/shared/ui/Text";
+import { Text } from "@/shared/ui/deprecated/Text";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Icon } from "@/shared/ui/Icon";
-import { Card } from "@/shared/ui/Card";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Button } from "@/shared/ui/Button";
+import { Icon } from "@/shared/ui/deprecated/Icon";
+import { Card } from "@/shared/ui/deprecated/Card";
+import { Avatar } from "@/shared/ui/deprecated/Avatar";
+import { Button } from "@/shared/ui/deprecated/Button";
 import { getRouteArticlesDetails } from "@/shared/const/router";
-import { AppLink } from "@/shared/ui/AppLink";
+import { AppLink } from "@/shared/ui/deprecated/AppLink";
 import { EyeIcon } from "@/shared/assets";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { Article, ArticleTextBlock } from "../../model/types/article";
 import { ArticleBlockType, ArticleView } from "../../model/consts/articleConstst";
 
 import styles from "./ArticleListItem.module.scss";
-import { AppImage } from "@/shared/ui/AppImage";
-import { Skeleton } from "@/shared/ui/Skeleton";
+import { AppImage } from "@/shared/ui/deprecated/AppImage";
+import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
 
 interface IArticleListItemProps {
     article: Article;
