@@ -35,6 +35,8 @@ export const ArticleListViewSelector = memo(
                     >
                         <Icon
                             Svg={viewType.icon}
+                            width={24}
+                            height={24}
                             className={classNames("", {
                                 [styles.selected]: view === viewType.view,
                             })}
