@@ -12,6 +12,7 @@ import { getScrollSaveByPath, scrollSaveActions } from "@/features/ScrollSave";
 import { StateSchema } from "@/app/providers/StoreProvider";
 
 import styles from "./Page.module.scss";
+import { toggleFeatures } from "@/shared/lib/features";
 
 interface IPageProps extends ITestProps {
     className?: string;
@@ -47,7 +48,15 @@ export const Page = (props: IPageProps) => {
     return (
         <main
             ref={wrapperRef}
-            className={classNames(styles.page, {}, [className])}
+            className={classNames(
+                toggleFeatures({
+                    name: "isAppRedesigned",
+                    on: () => styles.pageRedesigned,
+                    off: () => styles.page,
+                }),
+                {},
+                [className]
+            )}
             onScroll={onScroll}
             data-testid={props["data-testid"] ?? "Page"}
         >

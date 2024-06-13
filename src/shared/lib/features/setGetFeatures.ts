@@ -9,5 +9,5 @@ export const setFeatureFlags = (newFeatureFlags?: IFeatureFlags) => {
 };
 
 export const getFeatureFlag = (flag: keyof IFeatureFlags) => {
-    return featureFlags[flag];
+    return featureFlags?.[flag];
 };

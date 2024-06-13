@@ -2,6 +2,8 @@
     --font-family-main: "ProximaNova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, Apple Color Emoji,
         Segoe UI Emoji, Segoe UI Symbol;
+    --font-family-text-redesigned: "Nunito Sans", sans-serif;
+    --font-family-title-redesigned: "Roboto", sans-serif;
 
     --font-size-s: 15px;
     --font-line-s: 20px;
@@ -33,4 +35,18 @@
     --overlay-color: rgba(0 0 0 / 60%);
     --red-light: #ff8573;
     --red-dark: #ce0505;
+
+    // redesigned
+
+    --font-s-redesigned: var(--font-size-s) / var(--font-line-s) /
+        var(--font-family-text-redesigned);
+
+    --font-m-redesigned: var(--font-size-m) / var(--font-line-m) /
+        var(--font-family-text-redesigned);
+
+    --font-l-redesigned: var(--font-size-l) / var(--font-line-l) /
+        var(--font-family-title-redesigned);
+
+    --font-xl-redesigned: var(--font-size-xl) / var(--font-line-xl) /
+        var(--font-family-title-redesigned);
 }

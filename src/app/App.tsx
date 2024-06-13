@@ -10,6 +10,8 @@ import { Sidebar } from "@/widgets/Sidebar";
 import { getUserInited, initAuthData } from "@/entities/User";
 
 import { AppRouter } from "./providers/router";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { MainLayout } from "@/shared/layouts/MainLayout";
 
 export const App = () => {
     const { theme } = useTheme();
@@ -25,14 +27,31 @@ export const App = () => {
     }
 
     return (
-        <div className={classNames("app", { selected: true }, [theme])}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    {inited && <AppRouter />}
+        <ToggleFeatures
+            name="isAppRedesigned"
+            on={
+                <div className={classNames("app_redesigned", { selected: true }, [theme])}>
+                    <Suspense fallback="">
+                        <MainLayout
+                            header={<Navbar />}
+                            content={<AppRouter />}
+                            sidebar={<Sidebar />}
+                            toolbar={<div>asdfg</div>}
+                        />
+                    </Suspense>
                 </div>
-            </Suspense>
-        </div>
+            }
+            off={
+                <div className={classNames("app", { selected: true }, [theme])}>
+                    <Suspense fallback="">
+                        <Navbar />
+                        <div className="content-page">
+                            <Sidebar />
+                            {inited && <AppRouter />}
+                        </div>
+                    </Suspense>
+                </div>
+            }
+        />
     );
 };

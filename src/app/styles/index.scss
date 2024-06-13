@@ -16,6 +16,15 @@ body {
     min-height: 100vh;
 }
 
+.app_redesigned {
+    background: var(--bg-redesigned);
+    min-height: 100vh;
+    font-size: var(--font-size-m);
+    line-height: var(--font-line-m);
+    font-family: var(--font-family-text-redesigned);
+    color: var(--text-redesigned);
+}
+
 .content-page {
     display: flex;
 }
