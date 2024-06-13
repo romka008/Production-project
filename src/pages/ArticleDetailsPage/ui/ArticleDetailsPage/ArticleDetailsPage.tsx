@@ -9,7 +9,7 @@ import {
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { ArticleRecommendationsList } from "@/features/articleRecommendationsList";
 import { VStack } from "@/shared/ui/Stack";
-import { toggleFeatures } from "@/shared/lib/features";
+import { ToggleFeatures } from "@/shared/lib/features";
 import { Card } from "@/shared/ui/Card";
 import { Page } from "@/widgets/Page";
 import { ArticleRating } from "@/features/ArticleRating";
@@ -36,19 +36,24 @@ const ArticleDetailsPage = () => {
         );
     }
 
-    const articleRating = toggleFeatures({
-        name: "isArticleRatingEnabled",
-        on: () => <ArticleRating articleId={id} />,
-        off: () => <Card>{t("Оценка статей скоро появится!")}</Card>,
-    });
-
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <Page className={classNames(styles.articleDetailsPage, {}, [])}>
                 <VStack gap="16">
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    {articleRating}
+                    <ToggleFeatures
+                        name="isArticleRatingEnabled"
+                        on={<ArticleRating articleId={id} />}
+                        off={
+                            <Card style={{ color: "#fff" }}>
+                                {t("Оценка статей скоро появится!")}
+                            </Card>
+                        }
+                    />
+                    {/* npm run remove-feature isArticleRatingEnabled on */}
+                    {/* <ArticleRating articleId={id} /> */}
+
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>

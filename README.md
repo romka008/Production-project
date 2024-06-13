@@ -23,6 +23,8 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 -   `npm run storybook:build` - Сборка storybook билда
 -   `npm run prepare` - Прекоммит хуки
 -   `npm run generate:slice` - Скрипт для генерации FSD слайсов
+-   `npm run postinstall` - Чистка кэша
+-   `npm run remove-feature` - Скрипт удаления ToggleFeatures в компонентах <ToggleFeatures name="name" on={<Features/>} off={<OldFeatures/>}/> => <Features/>
 
 ---
 
