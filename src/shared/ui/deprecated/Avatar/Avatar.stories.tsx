@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Avatar } from "./Avatar";
-import AvatarImg from "../../assets/tests/storybook.jpg";
+import AvatarImg from "../../../assets/tests/storybook.jpg";
 
 const meta: Meta<typeof Avatar> = {
-    title: "shared/Avatar",
+    title: "shared/Avatar/old",
     component: Avatar,
     // parameters: {
     //     layout: "centered",

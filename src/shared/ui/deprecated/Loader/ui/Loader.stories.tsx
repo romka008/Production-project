@@ -5,7 +5,7 @@ import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof Loader> = {
-    title: "widgets/Loader",
+    title: "shared/Loader/old",
     component: Loader,
     // parameters: {
     //     layout: "centered",

@@ -2,9 +2,12 @@ import { memo, useCallback } from "react";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { LightIcon } from "@/shared/assets";
+import ThemeIcon from "@/shared/assets/icons/Theme.svg";
 import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { Icon } from "@/shared/ui/redesigned/Icon";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Icon } from "@/shared/ui/deprecated/Icon";
+import { Icon as IconDeprecated } from "@/shared/ui/deprecated/Icon";
 import { saveJsonSettings } from "@/entities/User";
 
 import styles from "./ThemeSwitcher.module.scss";
@@ -23,13 +26,26 @@ export const ThemeSwitcher = memo(({ className }: IThemeSwitcherProps) => {
     }, [dispatch, toogleTheme]);
 
     return (
-        <Button
-            className={classNames(styles.themeSwitcher, {}, [className])}
-            onClick={onToggleHandler}
-            theme={ButtonTheme.CLEAR}
-        >
-            <Icon Svg={LightIcon} width={40} height={40} inverted />
-            {/* {theme === Theme.LIGHT ? <LightIcon /> : <DarkIcon />} */}
-        </Button>
+        <ToggleFeatures
+            name="isAppRedesigned"
+            on={
+                <Icon
+                    className={classNames(styles.themeSwitcher, {}, [className])}
+                    clickable
+                    onClick={onToggleHandler}
+                    Svg={ThemeIcon}
+                />
+            }
+            off={
+                <Button
+                    className={classNames(styles.themeSwitcher, {}, [className])}
+                    onClick={onToggleHandler}
+                    theme={ButtonTheme.CLEAR}
+                >
+                    <IconDeprecated Svg={LightIcon} width={40} height={40} inverted />
+                    {/* {theme === Theme.LIGHT ? <LightIcon /> : <DarkIcon />} */}
+                </Button>
+            }
+        />
     );
 });

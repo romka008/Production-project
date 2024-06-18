@@ -5,7 +5,7 @@ import { Theme } from "@/shared/const/theme";
 import { Popover } from "./Popover";
 
 const meta: Meta<typeof Popover> = {
-    title: "shared/Popover",
+    title: "shared/Popover/old",
     component: Popover,
     // parameters: {
     //     layout: "centered",

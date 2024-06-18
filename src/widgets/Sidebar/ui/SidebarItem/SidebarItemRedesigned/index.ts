@@ -1,0 +1,1 @@
+export { SidebarItemRedesigned } from "./SidebarItemRedesigned";

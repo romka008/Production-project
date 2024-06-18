@@ -6,7 +6,7 @@ import { Theme } from "@/shared/const/theme";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 
 const meta: Meta<typeof Tabs> = {
-    title: "shared/Tabs",
+    title: "shared/Tabs/old",
     component: Tabs,
     // parameters: {
     //     layout: "centered",

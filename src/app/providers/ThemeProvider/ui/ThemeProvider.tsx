@@ -11,6 +11,8 @@ interface IThemeProviderProps {
 const ThemeProvider = ({ initialTheme, children }: IThemeProviderProps) => {
     const { theme: defaultTheme } = useJsonSettings();
 
+    // const defaultTheme = Theme.LIGHT;
+
     const [isThemeInited, setIsThemeInited] = useState(false);
     const [theme, setTheme] = useState(initialTheme || defaultTheme || Theme.LIGHT);
 

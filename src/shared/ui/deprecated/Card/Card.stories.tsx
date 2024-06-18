@@ -6,7 +6,7 @@ import { Theme } from "@/shared/const/theme";
 import { Text } from "../Text/Text";
 
 const meta: Meta<typeof Card> = {
-    title: "shared/Card",
+    title: "shared/Card/old",
     component: Card,
     // parameters: {
     //     layout: "centered",

@@ -5,7 +5,7 @@ import { Theme } from "@/shared/const/theme";
 import { Skeleton } from "./Skeleton";
 
 const meta: Meta<typeof Skeleton> = {
-    title: "shared/Skeleton",
+    title: "shared/Skeleton/old",
     component: Skeleton,
     // parameters: {
     //     layout: "centered",

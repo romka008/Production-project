@@ -5,7 +5,7 @@ import { Theme } from "@/shared/const/theme";
 import { Overlay } from "./Overlay";
 
 const meta: Meta<typeof Overlay> = {
-    title: "shared/Overlay",
+    title: "shared/Overlay/old",
     component: Overlay,
     // parameters: {
     //     layout: "centered",

@@ -5,7 +5,7 @@ import { Theme } from "@/shared/const/theme";
 import { Drawer } from "./Drawer";
 
 const meta: Meta<typeof Drawer> = {
-    title: "shared/Drawer",
+    title: "shared/Drawer/old",
     component: Drawer,
     // parameters: {
     //     layout: "centered",

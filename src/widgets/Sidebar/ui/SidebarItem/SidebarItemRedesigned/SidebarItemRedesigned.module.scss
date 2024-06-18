@@ -1,0 +1,34 @@
+.item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding: 0 16px;
+}
+
+.link {
+    opacity: 1;
+}
+
+.icon {
+    fill: var(--secondary-color);
+}
+
+.collapsed {
+    gap: 0;
+    padding: 0 0 0 8px;
+    .link {
+        opacity: 0;
+        transition: 0.3s opasity;
+        width: 0;
+    }
+}
+
+.itemActive {
+    background: linear-gradient(
+        89.97deg,
+        rgba(29, 89, 255, 0.3) 1.15%,
+        rgba(94, 211, 243, 0) 99.97%
+    );
+    border-left: 1px solid #5ed3f3;
+}

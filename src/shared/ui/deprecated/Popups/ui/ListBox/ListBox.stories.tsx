@@ -5,7 +5,7 @@ import { Theme } from "@/shared/const/theme";
 import { ListBox } from "./ListBox";
 
 const meta: Meta<typeof ListBox> = {
-    title: "shared/ListBox",
+    title: "shared/ListBox/old",
     component: ListBox,
     // parameters: {
     //     layout: "centered",

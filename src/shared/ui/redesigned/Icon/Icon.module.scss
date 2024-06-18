@@ -1,0 +1,11 @@
+.icon {
+    color: var(--icon-redesigned);
+}
+
+.iconClickable {
+    cursor: pointer;
+}
+
+.iconClickable:hover {
+    color: var(--accent-redesigned);
+}
