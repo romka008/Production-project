@@ -6,7 +6,7 @@ import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDe
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof Sidebar> = {
-    title: "widgets/old/Sidebar",
+    title: "widgets/Sidebar/old",
     component: Sidebar,
     // parameters: {
     //     layout: "centered",

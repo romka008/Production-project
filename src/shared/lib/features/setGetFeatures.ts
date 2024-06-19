@@ -11,3 +11,7 @@ export const setFeatureFlags = (newFeatureFlags?: IFeatureFlags) => {
 export const getFeatureFlag = (flag: keyof IFeatureFlags) => {
     return featureFlags?.[flag];
 };
+
+export const getAllFeaturesFlags = () => {
+    return featureFlags;
+};
