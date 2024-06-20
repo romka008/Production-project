@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { NewDesignDecorator } from "@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator";
 
 const meta: Meta<typeof ThemeSwitcher> = {
     title: "widgets/ThemeSwitcher",
@@ -12,6 +14,7 @@ const meta: Meta<typeof ThemeSwitcher> = {
     // },
     tags: ["autodocs"],
     argTypes: {},
+    decorators: [StoreDecorator({})],
 };
 
 export default meta;
@@ -25,4 +28,14 @@ export const Light: Story = {
 export const Dark: Story = {
     args: {},
     decorators: [ThemeDecorator(Theme.DARK)],
+};
+
+export const NewDesignLight: Story = {
+    args: {},
+    decorators: [NewDesignDecorator({ isAppRedesigned: true })],
+};
+
+export const NewDesignDark: Story = {
+    args: {},
+    decorators: [NewDesignDecorator({ isAppRedesigned: true }, Theme.DARK)],
 };

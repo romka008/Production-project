@@ -3,13 +3,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 
 import styles from "./Button.module.scss";
 
-export type ButtonVariant =
-    | "clear"
-    | "clearInverted"
-    | "outline"
-    | "outlineRed"
-    | "background"
-    | "backgroundInverted";
+export type ButtonVariant = "clear" | "outline";
 
 export type ButtonSize = "m" | "l" | "xl";
 

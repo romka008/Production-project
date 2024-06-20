@@ -46,11 +46,6 @@ export interface IFlexProps extends TDivProps {
     max?: boolean;
 }
 
-/**
- * Устарел, используем новые компоненты из папки redesigned
- * @deprecated
- */
-
 export const Flex = ({
     className,
     children,

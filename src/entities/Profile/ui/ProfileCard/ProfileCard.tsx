@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import { Text, TextAlign, TextTheme } from "@/shared/ui/deprecated/Text";
 import { Input } from "@/shared/ui/deprecated/Input";
-import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { Loader } from "@/shared/ui/deprecated/Loader";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Avatar } from "@/shared/ui/deprecated/Avatar";

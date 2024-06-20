@@ -1,17 +1,18 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
 
 import { Flex } from "./Flex";
+import { NewDesignDecorator } from "@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator";
 
 const meta: Meta<typeof Flex> = {
-    title: "shared/Flex/old",
+    title: "shared/Flex/newDesign",
     component: Flex,
     // parameters: {
     //     layout: "centered",
     // },
     tags: ["autodocs"],
     argTypes: {},
+    decorators: [NewDesignDecorator({ isAppRedesigned: true })],
 };
 
 export default meta;
@@ -23,7 +24,7 @@ export const Normal: Story = {
 
 export const NormalDark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [NewDesignDecorator({ isAppRedesigned: true }, Theme.DARK)],
 };
 
 export const Row: Story = {

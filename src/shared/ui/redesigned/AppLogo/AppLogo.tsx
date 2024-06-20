@@ -1,7 +1,7 @@
 import { memo } from "react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { HStack } from "../../deprecated/Stack";
+import { HStack } from "../Stack";
 import { Text, TextAlign, TextTheme } from "../../deprecated/Text";
 
 import styles from "./AppLogo.module.scss";

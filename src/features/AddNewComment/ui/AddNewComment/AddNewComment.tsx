@@ -18,7 +18,7 @@ import {
 } from "../../model/selectors/addNewCommentSelectors";
 
 import styles from "./AddNewComment.module.scss";
-import { HStack } from "@/shared/ui/deprecated/Stack";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 
 export interface IAddNewCommentProps {
     className?: string;

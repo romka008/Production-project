@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonSize, ButtonTheme } from "@/shared/ui/deprecated/Button";
-import { VStack } from "@/shared/ui/deprecated/Stack";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 import { ThemeSwitcher } from "@/features/ThemeSwitcher";
 import { LangSwitcher } from "@/features/LangSwitcher";
 

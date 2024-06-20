@@ -5,7 +5,7 @@ import { Text, TextAlign } from "@/shared/ui/deprecated/Text";
 import { ArticleImageBlock } from "../../model/types/article";
 
 import styles from "./ArticleImageBlockComponent.module.scss";
-import { VStack } from "@/shared/ui/deprecated/Stack";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 interface IArticleImageBlockComponentProps {
     block: ArticleImageBlock;

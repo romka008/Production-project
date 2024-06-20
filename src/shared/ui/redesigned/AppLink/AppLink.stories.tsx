@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { AppLink } from "./AppLink";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
+import { NewDesignDecorator } from "@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator";
 
 const meta: Meta<typeof AppLink> = {
     title: "shared/AppLink/newDesign",
@@ -15,6 +15,7 @@ const meta: Meta<typeof AppLink> = {
     args: {
         to: "/",
     },
+    decorators: [NewDesignDecorator({ isAppRedesigned: true })],
 };
 
 export default meta;
@@ -30,10 +31,10 @@ export const Red: Story = {
 
 export const PrimaryDark: Story = {
     args: { children: "Текст", variant: "primary" },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [NewDesignDecorator({ isAppRedesigned: true }, Theme.DARK)],
 };
 
 export const RedDark: Story = {
     args: { children: "Текст", variant: "red" },
-    decorators: [ThemeDecorator(Theme.DARK)],
+    decorators: [NewDesignDecorator({ isAppRedesigned: true }, Theme.DARK)],
 };

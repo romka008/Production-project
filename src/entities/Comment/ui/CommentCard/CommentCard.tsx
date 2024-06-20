@@ -7,7 +7,7 @@ import { getRouteProfile } from "@/shared/const/router";
 import { Comment } from "../../";
 
 import styles from "./CommentCard.module.scss";
-import { VStack } from "@/shared/ui/deprecated/Stack";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 interface ICommentCardProps {
     className?: string;

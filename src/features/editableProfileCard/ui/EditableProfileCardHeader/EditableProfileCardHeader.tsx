@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-import { HStack } from "@/shared/ui/deprecated/Stack";
+import { HStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/deprecated/Text";
 import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";

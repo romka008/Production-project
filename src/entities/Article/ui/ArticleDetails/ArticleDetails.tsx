@@ -28,7 +28,7 @@ import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleC
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 
 import styles from "./ArticleDetails.module.scss";
-import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 
 interface IArticleDetailsProps {
     id: string;

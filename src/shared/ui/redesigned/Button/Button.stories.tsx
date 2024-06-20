@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import { Button } from "./Button";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "@/shared/const/theme";
+import { NewDesignDecorator } from "@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator";
 
 const meta: Meta<typeof Button> = {
     title: "shared/Button/newDesign",
@@ -12,28 +12,16 @@ const meta: Meta<typeof Button> = {
     // },
     tags: ["autodocs"],
     argTypes: {},
+    decorators: [NewDesignDecorator({ isAppRedesigned: true })],
 };
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
-    args: {
-        children: "Button",
-    },
-};
-
 export const Clear: Story = {
     args: {
         children: "Button",
         variant: "clear",
-    },
-};
-
-export const ClearInverted: Story = {
-    args: {
-        children: "Button",
-        variant: "clearInverted",
     },
 };
 
@@ -65,27 +53,12 @@ export const OutlineDark: Story = {
         children: "Button",
         variant: "outline",
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
-};
-
-export const BackgroundTheme: Story = {
-    args: {
-        children: "Button",
-        variant: "background",
-    },
-};
-
-export const BackgroundInverted: Story = {
-    args: {
-        children: "Button",
-        variant: "backgroundInverted",
-    },
+    decorators: [NewDesignDecorator({ isAppRedesigned: true }, Theme.DARK)],
 };
 
 export const Square: Story = {
     args: {
         children: ">",
-        variant: "backgroundInverted",
         square: true,
     },
 };
@@ -93,7 +66,6 @@ export const Square: Story = {
 export const SquareSizeL: Story = {
     args: {
         children: ">",
-        variant: "backgroundInverted",
         square: true,
         size: "l",
     },
@@ -102,7 +74,6 @@ export const SquareSizeL: Story = {
 export const SquareSizeXL: Story = {
     args: {
         children: ">",
-        variant: "backgroundInverted",
         square: true,
         size: "xl",
     },
