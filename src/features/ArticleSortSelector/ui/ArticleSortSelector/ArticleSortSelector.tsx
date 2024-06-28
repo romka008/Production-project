@@ -7,6 +7,10 @@ import { SortOrder } from "@/shared/types/sort";
 import { ArticleSortField } from "@/entities/Article";
 
 import styles from "./ArticleSortSelector.module.scss";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { ListBox } from "@/shared/ui/redesigned/Popups";
+import { VStack } from "@/shared/ui/redesigned/Stack";
+import { Text } from "@/shared/ui/redesigned/Text";
 
 export interface IArticleSortSelectorProps {
     className?: string;
@@ -72,21 +76,40 @@ const ArticleSortSelector = ({
     // );
 
     return (
-        <div className={classNames(styles.articleSortSelector, {}, [className])}>
-            <div className={styles.field}>
-                <label className={styles.label}>{t("Сортировать ПО")}</label>
-                {/* можно явно передавать тип */}
-                <Select<ArticleSortField>
-                    options={sortFieldOptions}
-                    value={sort}
-                    onChange={onChangeSort}
-                />
-            </div>
-            <div className={styles.field}>
-                <label className={styles.label}>{t("по")}</label>
-                <Select options={orderOptions} value={order} onChange={onChangeOrder} />
-            </div>
-        </div>
+        <ToggleFeatures
+            name="isAppRedesigned"
+            on={
+                <div className={classNames(styles.articleSortSelectorRedesigned, {}, [className])}>
+                    <VStack gap="8">
+                        <Text text={t("Сортировать по")} />
+                        {/* можно явно передавать тип */}
+                        <ListBox<ArticleSortField>
+                            items={sortFieldOptions}
+                            value={sort}
+                            onChange={onChangeSort}
+                        />
+                        <ListBox items={orderOptions} value={order} onChange={onChangeOrder} />
+                    </VStack>
+                </div>
+            }
+            off={
+                <div className={classNames(styles.articleSortSelector, {}, [className])}>
+                    <div className={styles.field}>
+                        <label className={styles.label}>{t("Сортировать по")}</label>
+                        {/* можно явно передавать тип */}
+                        <Select<ArticleSortField>
+                            options={sortFieldOptions}
+                            value={sort}
+                            onChange={onChangeSort}
+                        />
+                    </div>
+                    <div className={styles.field}>
+                        <label className={styles.label}>{t("по")}</label>
+                        <Select options={orderOptions} value={order} onChange={onChangeOrder} />
+                    </div>
+                </div>
+            }
+        />
     );
 };
 

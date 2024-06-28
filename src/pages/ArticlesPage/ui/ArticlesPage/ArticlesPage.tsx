@@ -7,6 +7,8 @@ import {
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useInitialEffect } from "@/shared/lib/hooks/UseInitialEffect/UseInitialEffect";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { StickyContentLayout } from "@/shared/layouts/StickyContentLayout";
 import { Page } from "@/widgets/Page";
 import { ArticlePageGreeting } from "@/features/articlePageGreeting";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
@@ -14,6 +16,8 @@ import { ArticlePageReducer } from "../../model/slices/articlesPageSlice";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
 import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList";
+import { ViewSelectorContainer } from "../ViewSelectorContainer";
+import { FiltersContainer } from "../FiltersContainer/FiltersContainer";
 
 import styles from "./ArticlesPage.module.scss";
 
@@ -33,14 +37,37 @@ const ArticlesPage = () => {
         dispatch(initArticlesPage(searchParams));
     });
 
+    const content = (
+        <ToggleFeatures
+            name="isAppRedesigned"
+            on={
+                <StickyContentLayout
+                    content={
+                        <Page onScrollEnd={onLoadNextPart} data-testid="ArticlesPage">
+                            {/* <ArticlesPageFilters /> */}
+                            <ArticleInfiniteList />
+                            <ArticlePageGreeting />
+                            {/* <ArticleList articles={[article]} /> */}
+                        </Page>
+                    }
+                    left={<ViewSelectorContainer />}
+                    right={<FiltersContainer />}
+                />
+            }
+            off={
+                <Page onScrollEnd={onLoadNextPart} data-testid="ArticlesPage">
+                    <ArticlesPageFilters />
+                    <ArticleInfiniteList className={styles.list} />
+                    <ArticlePageGreeting />
+                    {/* <ArticleList articles={[article]} /> */}
+                </Page>
+            }
+        />
+    );
+
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={false}>
-            <Page onScrollEnd={onLoadNextPart} data-testid="ArticlesPage">
-                <ArticlesPageFilters />
-                <ArticleInfiniteList className={styles.list} />
-                <ArticlePageGreeting />
-                {/* <ArticleList articles={[article]} /> */}
-            </Page>
+            {content}
         </DynamicModuleLoader>
     );
 };

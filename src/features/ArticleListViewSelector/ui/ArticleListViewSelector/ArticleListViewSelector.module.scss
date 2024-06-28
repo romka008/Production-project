@@ -1,3 +1,18 @@
-.selected {
-    fill: var(--secondary-color);
+.articleListViewSelectorRedesigned {
+    display: flex;
+    gap: 8px;
+
+    .notSelected {
+        color: var(--light-bg-redesigned);
+    }
+
+    .notSelected:hover {
+        color: var(--icon-redesigned);
+    }
+}
+
+.articleListViewSelector {
+    .selected {
+        fill: var(--secondary-color);
+    }
 }

@@ -30,7 +30,15 @@ export const Page = (props: IPageProps) => {
         getScrollSaveByPath(state, location.pathname)
     );
 
-    useInfiniteScroll({ wrapperRef, triggerRef, callback: onScrollEnd });
+    useInfiniteScroll({
+        wrapperRef: toggleFeatures({
+            name: "isAppRedesigned",
+            on: () => null,
+            off: () => wrapperRef,
+        }),
+        triggerRef,
+        callback: onScrollEnd,
+    });
 
     useInitialEffect(() => {
         wrapperRef.current.scrollTop = scrollPosition;

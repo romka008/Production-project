@@ -5,6 +5,7 @@ import styles from "./Card.module.scss";
 
 export type CardVariant = "normal" | "light" | "outlined";
 export type CardPading = "0" | "8" | "16" | "24";
+export type CardBorder = "normal" | "round";
 
 interface ICardProps extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode;
@@ -12,6 +13,7 @@ interface ICardProps extends HTMLAttributes<HTMLDivElement> {
     variant?: CardVariant;
     fullWidth?: boolean;
     padding?: CardPading;
+    border?: CardBorder;
 }
 
 const mapPaddingToClass: Record<CardPading, string> = {
@@ -27,6 +29,7 @@ export const Card = ({
     variant = "normal",
     fullWidth,
     padding = "8",
+    border = "normal",
     ...rest
 }: ICardProps) => {
     const mods = { [styles.fullWidth]: fullWidth };
@@ -38,6 +41,7 @@ export const Card = ({
             className={classNames(styles.card, mods, [
                 styles[variant],
                 styles[paddingClass],
+                styles[border],
                 className,
             ])}
             {...rest}

@@ -1,0 +1,17 @@
+.input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: var(--inverted-secondary-color);
+    color: var(--primary-color);
+    padding-left: 5px;
+    :focus {
+        outline: none;
+    }
+}
+
+.readOnly {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

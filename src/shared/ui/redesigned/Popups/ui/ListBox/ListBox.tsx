@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from "react";
+import { Fragment, ReactNode, useMemo } from "react";
 import { Listbox as HListbox } from "@headlessui/react";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
@@ -18,23 +18,23 @@ const people = [
     { id: 5, name: "Katelyn Rohan", unavailable: false },
 ];
 
-export interface IListBoxItem {
-    value: string;
+export interface IListBoxItem<T extends string> {
+    value: T;
     content: ReactNode;
     disabled?: boolean;
 }
 
-interface IListBoxProps {
-    items?: IListBoxItem[];
+interface IListBoxProps<T extends string> {
+    items?: IListBoxItem<T>[];
     className?: string;
-    value?: string;
+    value?: T;
     defaultValue?: string;
-    onChange?: (value: string) => void;
+    onChange?: (value: T) => void;
     readOnly?: boolean;
     direction?: TDropdownDirection;
 }
 
-export const ListBox = ({
+export const ListBox = <T extends string>({
     items,
     className,
     value,
@@ -42,8 +42,12 @@ export const ListBox = ({
     onChange,
     readOnly,
     direction = "bottom right",
-}: IListBoxProps) => {
-    const optionsClasses = [mapDirectionClass[direction]];
+}: IListBoxProps<T>) => {
+    const optionsClasses = [mapDirectionClass[direction], popupStyles.menu];
+
+    const selectedItem = useMemo(() => {
+        return items?.find(item => item.value === value);
+    }, [items, value]);
 
     return (
         <HStack>
@@ -55,7 +59,9 @@ export const ListBox = ({
                 disabled={readOnly}
             >
                 <HListbox.Button as="span">
-                    <Button disabled={readOnly}>{value ?? defaultValue}</Button>
+                    <Button variant="filled" disabled={readOnly}>
+                        {selectedItem?.content ?? defaultValue}
+                    </Button>
                 </HListbox.Button>
                 <HListbox.Options className={classNames(styles.options, {}, optionsClasses)}>
                     {items?.map(item => (
