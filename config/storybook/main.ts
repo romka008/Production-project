@@ -4,13 +4,12 @@ const config: StorybookConfig = {
     stories: ["../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
     addons: [
         "@storybook/addon-links",
-        "@storybook/addon-essentials",
         {
             name: "@storybook/addon-styling-webpack",
         },
-        "@storybook/addon-interactions",
         "@storybook/addon-webpack5-compiler-babel",
         "@chromatic-com/storybook",
+        "@storybook/addon-docs",
     ],
     framework: {
         name: "@storybook/react-webpack5",

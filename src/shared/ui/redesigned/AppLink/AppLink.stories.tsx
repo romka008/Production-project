@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { AppLink } from "./AppLink";
 import { Theme } from "@/shared/const/theme";

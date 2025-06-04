@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { ArticleListItem } from "./ArticleListItem";
 import { Article } from "../../model/types/article";

@@ -1,9 +1,10 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Sidebar } from "./Sidebar";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import { Theme } from "@/shared/const/theme";
 import { NewDesignDecorator } from "@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 
 const meta: Meta<typeof Sidebar> = {
     title: "widgets/Sidebar/newDesign",
@@ -13,7 +14,7 @@ const meta: Meta<typeof Sidebar> = {
     // },
     tags: ["autodocs"],
     argTypes: {},
-    decorators: [NewDesignDecorator({ isAppRedesigned: true })],
+    decorators: [ThemeDecorator(Theme.LIGHT), NewDesignDecorator({ isAppRedesigned: true })],
 };
 
 export default meta;

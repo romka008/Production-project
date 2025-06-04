@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { NotificationItem } from "./NotificationItem";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
@@ -8,6 +8,13 @@ import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDe
 const meta: Meta<typeof NotificationItem> = {
     title: "entities/NotificationItem",
     component: NotificationItem,
+    args: {
+        item: {
+            id: "string",
+            title: "Заголовок",
+            description: "Описание",
+        },
+    },
     // parameters: {
     //     layout: "centered",
     // },

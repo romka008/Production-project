@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { ArticleList } from "./ArticleList";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
